@@ -1151,8 +1151,8 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontSize: '0.875rem',
   },
   submitButton: {
-    backgroundColor: '#1e3a8a',
-    color: 'white',
+    backgroundColor: 'yellow',
+    color: 'black',
     border: 'none',
     padding: '1rem 2rem',
     borderRadius: '8px',
