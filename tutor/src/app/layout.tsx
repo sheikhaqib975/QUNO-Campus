@@ -8,11 +8,14 @@ const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
   display: 'swap',
-}); 
+});
 
 export const metadata: Metadata = {
   title: 'QUNO CAMPUS',
   description: 'QUNO CAMPUS',
+  icons: {
+    icon: '/qunologo.png', 
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +28,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <Header />
         <main>{children}</main>
-        <Footer /> 
+        <Footer />
       </body>
     </html>
   );

@@ -1,21 +1,5 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import herochild from './assets/images/herochild.png';
-import aicourse from './assets/images/aicourse.png'; 
-import networking from './assets/images/networking.png';
-import graphicdesigning from './assets/images/graphicdesigning.png';
-import quran from './assets/images/quran.png';
-import autocad from './assets/images/autocad.png';
-import web from './assets/images/web.png';
-import dd from './assets/images/dd.png';
-import eng from './assets/images/eng.png';
-import tutor from './assets/images/tutor.png';
-import moneyback from './assets/images/moneyback.png';
-import support from './assets/images/support.png';
-import result from './assets/images/result.png';
-
-
 
 export default function Home() {
   const router = useRouter();
@@ -23,14 +7,9 @@ export default function Home() {
   const handleBookTrial = () => {
     router.push('/trial');
   };
-  // const handleCourses =() => {
-  //   router.push('/courses');
-  // };
 
   return (
     <div style={styles.container}>
-
-
       {/* Hero Section */}
       <section style={styles.heroSection}>
         <div style={styles.heroContent}>
@@ -41,10 +20,10 @@ export default function Home() {
                Tutoring
             </h1>
             <div>
-            <p style={styles.description}>
-            Your QUNO Campus provides online tutoring service where our exclusive full-time faculty and highly skilled 
-            tutors are passionately dedicated to student success and score elevation!!
-            </p>
+              <p style={styles.description}>
+                Your QUNO Campus provides online tutoring service where our exclusive full-time faculty and highly skilled 
+                tutors are passionately dedicated to student success and score elevation!!
+              </p>
             </div>
             <div style={styles.ctaButtons}>
               <button style={styles.primaryButton} onClick={handleBookTrial}>
@@ -52,174 +31,88 @@ export default function Home() {
                 <span style={styles.arrow}></span>
               </button>
              
-             <button style={styles.primaryButton} onClick={handleBookTrial}>
+              <button style={styles.primaryButton} onClick={handleBookTrial}>
                 Explore Courses
                 <span style={styles.arrow}></span>
               </button>
             </div>
-
-            {/* <div style={styles.stats}>
-              <div style={styles.statItem}>
-                <div style={styles.statNumber}>500+</div>
-                <div style={styles.statLabel}>Expert Tutors</div>
-              </div>
-              <div style={styles.statItem}>
-                <div style={styles.statNumber}>10K+</div>
-                <div style={styles.statLabel}>Students Helped</div>
-              </div>
-              <div style={styles.statItem}>
-                <div style={styles.statNumber}>4.8</div>
-                <div style={styles.statLabel}>Average Rating</div>
-              </div>
-            </div> */}
           </div>
-  <div style={styles.heroImage}>
-          <Image
-            src={herochild}
-            alt="Hero Image"
-            width={500}
-            height={500}
-            style={{
-              maxWidth: '100%',
-              height: 'auto',
-              borderRadius: '16px'
-            }}
-          />
-        </div>
 
-
-        </div>
-        {/* <div style={styles.heroRight}>
-            <div style={styles.featureCard}>
-              <h3 style={styles.cardTitle}>Why Choose QUNO CAMPUS?</h3>
-              
-              <div style={styles.featureItem}>
-                <div style={styles.featureIcon}>👥</div>
-                <div style={styles.featureContent}>
-                  <h4 style={styles.featureTitle}>One-on-One Online Tutoring</h4>
-                  <p style={styles.featureDesc}>Personalized sessions for all curricula including GCSSC, IGCSE, AP.</p>
-                </div>
-              </div>
-
-              <div style={styles.featureItem}>
-                <div style={styles.featureIcon}>💻</div>
-                <div style={styles.featureContent}>
-                  <h4 style={styles.featureTitle}>Programming Courses</h4>
-                  <p style={styles.featureDesc}>Python, C++ and practical skill development courses.</p>
-                </div>
-              </div>
-
-              <div style={styles.featureItem}>
-                <div style={styles.featureIcon}>📊</div>
-                <div style={styles.featureContent}>
-                  <h4 style={styles.featureTitle}>ERP Portal Access</h4>
-                  <p style={styles.featureDesc}>Unique credentials for lectures, schedules, and progress tracking.</p>
-                </div>
-              </div>
-
-              <div style={styles.featureItem}>
-                <div style={styles.featureIcon}>📞</div>
-                <div style={styles.featureContent}>
-                  <h4 style={styles.featureTitle}>24/7 Support</h4>
-                  <p style={styles.featureDesc}>Free trial sessions anytime with multichannel support.</p>
-                </div>
-              </div>
-            </div>
+          <div style={styles.heroImage}>
+            <img
+              src="/images/herochild.png"
+              alt="Hero Image"
+              style={{
+                maxWidth: '100%',
+                height: 'auto',
+                borderRadius: '16px'
+              }}
+            />
           </div>
         </div>
-        */}
       </section> 
 
       {/* Key Statistics Section */}
-      {/* <section style={styles.statsSection}>
-        <div style={styles.statsGrid}>
-          <div style={styles.statCard}>
-            <div style={styles.statNumber}>96%</div>
-            <div style={styles.statLabel}>Success Rate</div>
+      <section>
+        <div style={styles.stats} className="stats">
+          <div style={styles.statCard} className="statCard">
+            <div style={styles.statIcon}>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="3" width="16" height="18" rx="2" stroke="#0ea5e9" strokeWidth="2" />
+                <line x1="8" y1="7" x2="16" y2="7" stroke="#0ea5e9" strokeWidth="2" />
+                <line x1="8" y1="11" x2="16" y2="11" stroke="#0ea5e9" strokeWidth="2" />
+                <line x1="8" y1="15" x2="12" y2="15" stroke="#0ea5e9" strokeWidth="2" />
+              </svg>
+            </div>
+            <div>
+              <div style={styles.statNumber}>82k</div>
+              <div style={styles.statLabel}><b>Students</b><br />Enrolled</div>
+            </div>
           </div>
-          <div style={styles.statCard}>
-            <div style={styles.statNumber}>24/7</div>
-            <div style={styles.statLabel}>Support Available</div>
+          <div style={styles.statCard} className="statCard">
+            <div style={styles.statIcon}>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="3" width="16" height="18" rx="2" stroke="#0ea5e9" strokeWidth="2" />
+                <line x1="8" y1="7" x2="16" y2="7" stroke="#0ea5e9" strokeWidth="2" />
+                <line x1="8" y1="11" x2="16" y2="11" stroke="#0ea5e9" strokeWidth="2" />
+                <line x1="8" y1="15" x2="12" y2="15" stroke="#0ea5e9" strokeWidth="2" />
+              </svg>
+            </div>
+            <div>
+              <div style={styles.statNumber}>100k+</div>
+              <div style={styles.statLabel}><b>Classes</b><br />Completed</div>
+            </div>
           </div>
-          <div style={styles.statCard}>
-            <div style={styles.statNumber}>50+</div>
-            <div style={styles.statLabel}>Subject Covered</div>
+          <div style={styles.statCard} className="statCard">
+            <div style={styles.statIcon}>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="3" width="16" height="18" rx="2" stroke="#0ea5e9" strokeWidth="2" />
+                <line x1="8" y1="7" x2="16" y2="7" stroke="#0ea5e9" strokeWidth="2" />
+                <line x1="8" y1="11" x2="16" y2="11" stroke="#0ea5e9" strokeWidth="2" />
+                <line x1="8" y1="15" x2="12" y2="15" stroke="#0ea5e9" strokeWidth="2" />
+              </svg>
+            </div>
+            <div>
+              <div style={styles.statNumber}>415</div>
+              <div style={styles.statLabel}><b>Top</b><br />Instructors</div>
+            </div>
           </div>
-          <div style={styles.statCard}>
-            <div style={styles.statNumber}>15-min</div>
-            <div style={styles.statLabel}>Average Response Time</div>
+          <div style={styles.statCard} className="statCard">
+            <div style={styles.statIcon}>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="3" width="16" height="18" rx="2" stroke="#0ea5e9" strokeWidth="2" />
+                <line x1="8" y1="7" x2="16" y2="7" stroke="#0ea5e9" strokeWidth="2" />
+                <line x1="8" y1="11" x2="16" y2="11" stroke="#0ea5e9" strokeWidth="2" />
+                <line x1="8" y1="15" x2="12" y2="15" stroke="#0ea5e9" strokeWidth="2" />
+              </svg>
+            </div>
+            <div>
+              <div style={styles.statNumber}>99.5%</div>
+              <div style={styles.statLabel}><b>Satisfaction</b><br />Rate</div>
+            </div>
           </div>
         </div>
-      </section> */}
-
-
-
-
-{/* Key Statistics Section */}
-<section>
-  <div style={styles.stats} className="stats">
-    <div style={styles.statCard} className="statCard">
-      <div style={styles.statIcon}>
-        {/* Simple SVG icon */}
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-          <rect x="4" y="3" width="16" height="18" rx="2" stroke="#0ea5e9" strokeWidth="2" />
-          <line x1="8" y1="7" x2="16" y2="7" stroke="#0ea5e9" strokeWidth="2" />
-          <line x1="8" y1="11" x2="16" y2="11" stroke="#0ea5e9" strokeWidth="2" />
-          <line x1="8" y1="15" x2="12" y2="15" stroke="#0ea5e9" strokeWidth="2" />
-        </svg>
-      </div>
-      <div>
-        <div style={styles.statNumber}>82k</div>
-        <div style={styles.statLabel}><b>Students</b><br />Enrolled</div>
-      </div>
-    </div>
-    <div style={styles.statCard} className="statCard">
-      <div style={styles.statIcon}>
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-          <rect x="4" y="3" width="16" height="18" rx="2" stroke="#0ea5e9" strokeWidth="2" />
-          <line x1="8" y1="7" x2="16" y2="7" stroke="#0ea5e9" strokeWidth="2" />
-          <line x1="8" y1="11" x2="16" y2="11" stroke="#0ea5e9" strokeWidth="2" />
-          <line x1="8" y1="15" x2="12" y2="15" stroke="#0ea5e9" strokeWidth="2" />
-        </svg>
-      </div>
-      <div>
-        <div style={styles.statNumber}>100k+</div>
-        <div style={styles.statLabel}><b>Classes</b><br />Completed</div>
-      </div>
-    </div>
-    <div style={styles.statCard} className="statCard">
-      <div style={styles.statIcon}>
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-          <rect x="4" y="3" width="16" height="18" rx="2" stroke="#0ea5e9" strokeWidth="2" />
-          <line x1="8" y1="7" x2="16" y2="7" stroke="#0ea5e9" strokeWidth="2" />
-          <line x1="8" y1="11" x2="16" y2="11" stroke="#0ea5e9" strokeWidth="2" />
-          <line x1="8" y1="15" x2="12" y2="15" stroke="#0ea5e9" strokeWidth="2" />
-        </svg>
-      </div>
-      <div>
-        <div style={styles.statNumber}>415</div>
-        <div style={styles.statLabel}><b>Top</b><br />Instructors</div>
-      </div>
-    </div>
-    <div style={styles.statCard} className="statCard">
-      <div style={styles.statIcon}>
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-          <rect x="4" y="3" width="16" height="18" rx="2" stroke="#0ea5e9" strokeWidth="2" />
-          <line x1="8" y1="7" x2="16" y2="7" stroke="#0ea5e9" strokeWidth="2" />
-          <line x1="8" y1="11" x2="16" y2="11" stroke="#0ea5e9" strokeWidth="2" />
-          <line x1="8" y1="15" x2="12" y2="15" stroke="#0ea5e9" strokeWidth="2" />
-        </svg>
-      </div>
-      <div>
-        <div style={styles.statNumber}>99.5%</div>
-        <div style={styles.statLabel}><b>Satisfaction</b><br />Rate</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
+      </section>
 
       {/* How It Works Section */}
       <section style={styles.howItWorksSection}>
@@ -257,171 +150,162 @@ export default function Home() {
         </div>
       </section>
 
-    <section style={styles.coursesSection}>
-      <div style={styles.sectionHeader}>
-        <h2 style={styles.sectionTitle}>Academic & Skill-Based Courses</h2>
-        <p style={styles.sectionSubtitle}>
-          Comprehensive range of academic subjects and practical skill development courses
-        </p>
-      </div>
-
-      <div style={styles.coursesGrid}>
-
-        <div style={styles.courseCard}>
- <div style={{ objectFit:'contain'}}>            <Image
-              src={aicourse}
-              alt="Artificial Intelligence Course"
-              
-              objectFit="cover"
-            />
-          </div>
-          <h3 style={styles.courseTitle}>Artificial Intelligence</h3>
-          <p style={styles.courseStudents}>Comprehensive curriculum</p>
-          <div style={styles.courseRating}>
-            <span style={styles.star}>★</span>
-            <span>All Subjects</span>
-          </div>
-          <button style={styles.courseButton}>Learn More</button>
+      <section style={styles.coursesSection}>
+        <div style={styles.sectionHeader}>
+          <h2 style={styles.sectionTitle}>Academic & Skill-Based Courses</h2>
+          <p style={styles.sectionSubtitle}>
+            Comprehensive range of academic subjects and practical skill development courses
+          </p>
         </div>
 
-        {/* Other Courses */}
-        <div style={styles.courseCard}>
- <div style={{ objectFit:'contain'}}>       
-       <Image
-              src={graphicdesigning}
-              alt="Graphic designing Course"
-              
-              objectFit="cover"
-            />
+        <div style={styles.coursesGrid}>
+          <div style={styles.courseCard}>
+            <div style={styles.courseImageContainer}>
+              <img
+                src="/images/aicourse.png"
+                alt="Artificial Intelligence Course"
+                style={styles.courseImage}
+              />
+            </div>
+            <h3 style={styles.courseTitle}>Artificial Intelligence</h3>
+            <p style={styles.courseStudents}>Comprehensive curriculum</p>
+            <div style={styles.courseRating}>
+              <span style={styles.star}>★★★★★</span>
+              {/* <span>All Subjects</span> */}
+            </div>
+            <button style={styles.courseButton}>Learn More</button>
           </div>
-          <h3 style={styles.courseTitle}>Graphic Designing</h3>
-          <p style={styles.courseStudents}>International curriculum</p>
-          <div style={styles.courseRating}>
-            <span style={styles.star}>★</span>
-            <span>All Subjects</span>
+
+          <div style={styles.courseCard}>
+            <div style={styles.courseImageContainer}>
+              <img
+                src="/images/graphicdesigning.png"
+                alt="Graphic designing Course"
+                style={styles.courseImage}
+              />
+            </div>
+            <h3 style={styles.courseTitle}>Graphic Designing</h3>
+            <p style={styles.courseStudents}>International curriculum</p>
+            <div style={styles.courseRating}>
+              <span style={styles.star}>★★★★★</span>
+              {/* <span>All Subjects</span> */}
+            </div>
+            <button style={styles.courseButton}>Learn More</button>
           </div>
-          <button style={styles.courseButton}>Learn More</button>
+
+          <div style={styles.courseCard}>
+            <div style={styles.courseImageContainer}>
+              <img
+                src="/images/autocad.png"
+                alt="AutoCad Course"
+                style={styles.courseImage}
+              />
+            </div>
+            <h3 style={styles.courseTitle}>AutoCad</h3>
+            <p style={styles.courseStudents}>Advanced placement</p>
+            <div style={styles.courseRating}>
+              <span style={styles.star}>★★★★</span>
+              {/* <span>All Subjects</span> */}
+            </div>
+            <button style={styles.courseButton}>Learn More</button>
+          </div>
+
+          <div style={styles.courseCard}>
+            <div style={styles.courseImageContainer}>
+              <img
+                src="/images/dd.png"
+                alt="Design and Development Course"
+                style={styles.courseImage}
+              />
+            </div>
+            <h3 style={styles.courseTitle}>Design and Development</h3>
+            <p style={styles.courseStudents}>Practical skills</p>
+            <div style={styles.courseRating}>
+              <span style={styles.star}>★★★★</span>
+              {/* <span>Hands-on</span> */}
+            </div>
+            <button style={styles.courseButton}>Learn More</button>
+          </div>
+
+          <div style={styles.courseCard}>
+            <div style={styles.courseImageContainer}>
+              <img
+                src="/images/networking.png"
+                alt="Basic Networking Course"
+                style={styles.courseImage}
+              />
+            </div>
+            <h3 style={styles.courseTitle}>Basic Networking</h3>
+            <p style={styles.courseStudents}>Advanced coding</p>
+            <div style={styles.courseRating}>
+              <span style={styles.star}>★★★★★</span>
+              {/* <span>Hands-on</span> */}
+            </div>
+            <button style={styles.courseButton}>Learn More</button>
+          </div>
+
+          <div style={styles.courseCard}>
+            <div style={styles.courseImageContainer}>
+              <img
+                src="/images/quran.png"
+                alt="Quran"
+                style={styles.courseImage}
+              />
+            </div>
+            <h3 style={styles.courseTitle}>Quran Pak</h3>
+            <p style={styles.courseStudents}>All levels</p>
+            <div style={styles.courseRating}>
+              <span style={styles.star}>★★★★</span>
+              {/* <span>Personalized</span> */}
+            </div>
+            <button style={styles.courseButton}>Learn More</button>
+          </div>
+
+          <div style={styles.courseCard}>
+            <div style={styles.courseImageContainer}>
+              <img
+                src="/images/web.png"
+                alt="Web Development .NET Course"
+                style={styles.courseImage}
+              />
+            </div>
+            <h3 style={styles.courseTitle}>Web Development .NET</h3>
+            <p style={styles.courseStudents}>Physics, Chemistry, Biology</p>
+            <div style={styles.courseRating}>
+              <span style={styles.star}>★★★★★</span>
+              {/* <span>Practical</span> */}
+            </div>
+            <button style={styles.courseButton}>Learn More</button>
+          </div>
+
+          <div style={styles.courseCard}>
+            <div style={styles.courseImageContainer}>
+              <img
+                src="/images/eng.png"
+                alt="English Course"
+                style={styles.courseImage}
+              />
+            </div>
+            <h3 style={styles.courseTitle}>English & Languages</h3>
+            <p style={styles.courseStudents}>Communication skills</p>
+            <div style={styles.courseRating}>
+              <span style={styles.star}>★★★★</span>
+              {/* <span>Interactive</span> */}
+            </div>
+            <button style={styles.courseButton}>Learn More</button>
+          </div>
         </div>
 
-        <div style={styles.courseCard}>
- <div style={{ objectFit:'contain'}}>            <Image
-              src={autocad}
-              alt="AutoCad Course"
-              
-              objectFit="cover"
-            />
-          </div>
-          <h3 style={styles.courseTitle}>AutoCad</h3>
-          <p style={styles.courseStudents}>Advanced placement</p>
-          <div style={styles.courseRating}>
-            <span style={styles.star}>★</span>
-            <span>All Subjects</span>
-          </div>
-          <button style={styles.courseButton}>Learn More</button>
+        <div style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}>
+          <button
+            style={styles.viewAllButton}
+            onClick={() => router.push('/courses')}
+          >
+            View All Courses
+            <span style={styles.arrow}>➔</span>
+          </button>
         </div>
-
-        <div style={styles.courseCard}>
- <div style={{ objectFit:'contain'}}>            <Image
-              src={dd}
-              alt="Design and Development Course"
-              
-              objectFit="cover"
-            />
-          </div>
-          <h3 style={styles.courseTitle}>Design and Development</h3>
-          <p style={styles.courseStudents}>Practical skills</p>
-          <div style={styles.courseRating}>
-            <span style={styles.star}>★</span>
-            <span>Hands-on</span>
-          </div>
-          <button style={styles.courseButton}>Learn More</button>
-        </div>
-
-        <div style={styles.courseCard}>
-        <div style={{ objectFit:'contain'}}>
-            <Image
-              src={networking}
-              alt="Basic Networking Course"
-              
-              objectFit="cover"
-            />
-          </div>
-          <h3 style={styles.courseTitle}>Basic Networking</h3>
-          <p style={styles.courseStudents}>Advanced coding</p>
-          <div style={styles.courseRating}>
-            <span style={styles.star}>★</span>
-            <span>Hands-on</span>
-          </div>
-          <button style={styles.courseButton}>Learn More</button>
-        </div>
-
-        <div style={styles.courseCard}>
- <div style={{ objectFit:'contain'}}>            <Image
-              src={quran}
-              alt="Quran"
-             
-              objectFit="cover"
-            />
-          </div>
-          <h3 style={styles.courseTitle}>Quran Pak</h3>
-          <p style={styles.courseStudents}>All levels</p>
-          <div style={styles.courseRating}>
-            <span style={styles.star}>★</span>
-            <span>Personalized</span>
-          </div>
-          <button style={styles.courseButton}>Learn More</button>
-        </div>
-
-        <div style={styles.courseCard}>
- <div style={{ objectFit:'contain'}}>            <Image
-              src={web}
-              alt="Web Development .NET Course"
-             
-              objectFit="cover"
-            />
-          </div>
-          <h3 style={styles.courseTitle}>Web Development .NET</h3>
-          <p style={styles.courseStudents}>Physics, Chemistry, Biology</p>
-          <div style={styles.courseRating}>
-            <span style={styles.star}>★</span>
-            <span>Practical</span>
-          </div>
-          <button style={styles.courseButton}>Learn More</button>
-        </div>
-
-        <div style={styles.courseCard}>
-            <div style={{ objectFit:'contain'}}>
-              <Image
-              src={eng}
-              alt="English Course"
-              objectFit="cover"
-            />
-          </div>
-          <h3 style={styles.courseTitle}>English & Languages</h3>
-          <p style={styles.courseStudents}>Communication skills</p>
-          <div style={styles.courseRating}>
-            <span style={styles.star}>★</span>
-            <span>Interactive</span>
-          </div>
-          <button style={styles.courseButton}>Learn More</button>
-        </div>
-      </div>
-
-      <div style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}>
-        <button
-  style={styles.viewAllButton}
-  onClick={() => router.push('/C ourses')}
->
-  View All Courses
-  <span style={styles.arrow}>➔</span>
-</button>
-      </div>
-    </section>
-  
-
-
-
-
+      </section>
 
       {/* Our Tutoring Services Section */}
       <section style={styles.servicesSection}>
@@ -434,7 +318,7 @@ export default function Home() {
         
         <div style={styles.servicesGrid}>
           <div style={styles.serviceCard}>
-            <div style={styles.serviceIcon}>👥</div>
+            <img src="/images/academic.png" alt="academic tutor" style={styles.serviceIcon}/>
             <h3 style={styles.serviceTitle}>Academic Tutoring</h3>
             <p style={styles.serviceDescription}>
               One-on-one online tutoring for all curricula including GCSSC, IGCSE, AP, and others with personalized attention.
@@ -447,7 +331,7 @@ export default function Home() {
           </div>
           
           <div style={styles.serviceCard}>
-            <div style={styles.serviceIcon}>💻</div>
+        <img src="/images/courses.png" alt="skill based courses " style={styles.serviceIcon}/>
             <h3 style={styles.serviceTitle}>Skill-Based Courses</h3>
             <p style={styles.serviceDescription}>
               Practical skill development courses including programming languages such as Python, C++, and more.
@@ -460,7 +344,7 @@ export default function Home() {
           </div>
           
           <div style={styles.serviceCard}>
-            <div style={styles.serviceIcon}>📊</div>
+          <img src="/images/erp.png" alt="ERP" style={styles.serviceIcon}/>
             <h3 style={styles.serviceTitle}>ERP Portal & Assessment</h3>
             <p style={styles.serviceDescription}>
               Unique credentials for ERP portal access with daily lectures, weekly tests, and monthly PTMs.
@@ -485,25 +369,25 @@ export default function Home() {
         
         <div style={styles.whyChooseGrid}>
           <div style={styles.whyChooseItem}>
-          <Image
-          src={tutor}
-          alt="Certified Tutors"
-          width={100}
-          height={100}
-          ></Image>
+            <img
+              src="/images/tutor.png"
+              alt="Certified Tutors"
+              width="100"
+              height="100"
+            />
             <h3 style={styles.whyChooseTitle}>Certified Tutors </h3>
             <p style={styles.whyChooseDescription}>
-              Qualified proffesionals with proven track record and teaching certifications.
+              Qualified professionals with proven track record and teaching certifications.
             </p>
           </div>
           
           <div style={styles.whyChooseItem}>
-        <Image
-          src={support}
-          alt="24/7 Support"
-          width={100}
-          height={100}
-          ></Image>
+            <img
+              src="/images/support.png"
+              alt="24/7 Support"
+              width="100"
+              height="100"
+            />
             <h3 style={styles.whyChooseTitle}>24/7 Support Available</h3>
             <p style={styles.whyChooseDescription}>
               Get help whenever you need it with our flexible scheduling system.
@@ -511,12 +395,12 @@ export default function Home() {
           </div>
           
           <div style={styles.whyChooseItem}>
-           <Image
-          src={result}
-          alt="Results"
-          width={100}
-          height={100}
-          ></Image>
+            <img
+              src="/images/result.png"
+              alt="Results"
+              width="100"
+              height="100"
+            />
             <h3 style={styles.whyChooseTitle}>Proven Result</h3>
             <p style={styles.whyChooseDescription}>
               97% of our students see grade improvement within the first month.
@@ -524,12 +408,12 @@ export default function Home() {
           </div>
           
           <div style={styles.whyChooseItem}>
-           <Image
-          src={moneyback}
-          alt="Money Back Guarantee"
-          width={100}
-          height={100}
-          ></Image>
+            <img
+              src="/images/moneyback.png"
+              alt="Money Back Guarantee"
+              width="100"
+              height="100"
+            />
             <h3 style={styles.whyChooseTitle}>Money-Back Guarantee</h3>
             <p style={styles.whyChooseDescription}>
               Not satisfied ? Get your money back within 30 days , no questions asked.
@@ -582,11 +466,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-     
-     
-
-     
     </div>
   );
 }
@@ -619,7 +498,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     flexDirection: 'column',
     gap: '2rem',
   },
-   heroImage: {
+  heroImage: {
     flex: '1 1 40%',
     display: 'flex',
     justifyContent: 'flex-end',
@@ -669,72 +548,8 @@ const styles: { [key: string]: React.CSSProperties } = {
     boxShadow: '0 4px 6px rgba(30, 58, 138, 0.25)',
     fontFamily: 'Roboto, sans-serif',
   },
-  // secondaryButton: {
-  //   backgroundColor: 'transparent',
-  //   color: '#1e3a8a',
-  //   border: '2px solid #1e3a8a',
-  //   padding: '1rem 2rem',
-  //   borderRadius: '8px',
-  //   fontSize: '1.1rem',
-  //   fontWeight: '600',
-  //   cursor: 'pointer',
-  //   display: 'flex',
-  //   alignItems: 'center',
-  //   gap: '0.5rem',
-  //   transition: 'all 0.3s ease',
-  // },
   arrow: {
     fontSize: '1.2rem',
-  },
-  playIcon: {
-    fontSize: '0.9rem',
-  },
-  heroRight: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
-  featureCard: {
-    backgroundColor: 'white',
-    padding: 'clamp(1rem, 3vw, 1.5rem)',
-    borderRadius: '16px',
-    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
-    maxWidth: '100%',
-    width: '100%',
-  },
-  cardTitle: {
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
-    color: '#1e293b',
-    marginBottom: '2rem',
-    textAlign: 'center',
-    fontFamily: 'Roboto, sans-serif',
-  },
-  featureItem: {
-    display: 'flex',
-    alignItems: 'flex-start',
-    gap: '1rem',
-    marginBottom: '1.5rem',
-  },
-  featureIcon: {
-    fontSize: '1.5rem',
-    minWidth: '2rem',
-  },
-  featureContent: {
-    flex: 1,
-  },
-  featureTitle: {
-    fontSize: '1.1rem',
-    fontWeight: '600',
-    color: '#1e293b',
-    margin: '0 0 0.5rem 0',
-    fontFamily: 'Roboto, sans-serif',
-  },
-  featureDesc: {
-    fontSize: '0.95rem',
-    color: '#64748b',
-    lineHeight: '1.5',
-    margin: 0,
-    fontFamily: 'Roboto, sans-serif',
   },
 
   stats: {
@@ -745,6 +560,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     alignItems: 'stretch',
     flexWrap: 'wrap',
     justifyContent: 'center',
+    padding: '2rem 1rem',
   },
 
   statCard: {
@@ -772,7 +588,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   statNumber: {
     fontSize: '2.25rem',
     fontWeight: 700,
-    color: '#22b573',
+    color: 'blue',
     margin: 0,
     fontFamily: 'Roboto, sans-serif',
     lineHeight: 1.1,
@@ -786,7 +602,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontWeight: 500,
     lineHeight: 1.2,
   },
-  // Why Choose Section
+
   // How It Works Section
   howItWorksSection: {
     padding: 'clamp(1rem, 4vw, 2rem) clamp(0.5rem, 2vw, 1rem)',
@@ -848,6 +664,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     lineHeight: '1.6',
     fontFamily: 'Roboto, sans-serif',
   },
+
   // Courses Section
   coursesSection: {
     padding: 'clamp(2rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem)',
@@ -869,14 +686,24 @@ const styles: { [key: string]: React.CSSProperties } = {
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
     textAlign: 'center',
     transition: 'transform 0.3s ease',
-    minHeight: '200px',
+    minHeight: '350px',
     display: 'flex',
     flexDirection: 'column' as const,
     justifyContent: 'space-between',
   },
-  courseIcon: {
-    fontSize: '2.5rem',
+  courseImageContainer: {
+    width: '100%',
+    height: '150px',
     marginBottom: '1rem',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  courseImage: {
+    maxWidth: '100%',
+    height: 'auto',
+    borderRadius: '8px',
+    objectFit: 'cover' as const,
   },
   courseTitle: {
     fontSize: '1.2rem',
@@ -928,11 +755,9 @@ const styles: { [key: string]: React.CSSProperties } = {
     display: 'flex',
     alignItems: 'center',
     gap: '8px',
+    border:'2px solid black',
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-  
   },
- 
-
   
   // Services Section
   servicesSection: {
@@ -982,6 +807,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     marginBottom: '0.5rem',
     fontFamily: 'Roboto, sans-serif',
   },
+  
   // Why Choose Section
   whyChooseSection: {
     padding: 'clamp(1rem, 4vw, 2rem) clamp(0.5rem, 2vw, 1rem)',
@@ -998,10 +824,6 @@ const styles: { [key: string]: React.CSSProperties } = {
     textAlign: 'center',
     padding: '2rem',
   },
-  whyChooseIcon: {
-    fontSize: '3rem',
-    marginBottom: '1rem',
-  },
   whyChooseTitle: {
     fontSize: '1.2rem',
     fontWeight: 'bold',
@@ -1015,6 +837,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     lineHeight: '1.6',
     fontFamily: 'Roboto, sans-serif',
   },
+  
   // Testimonials Section
   testimonialsSection: {
     padding: 'clamp(1rem, 4vw, 2rem) clamp(0.5rem, 2vw, 1rem)',
@@ -1060,6 +883,4 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontSize: '0.9rem',
     fontFamily: 'Roboto, sans-serif',
   },
-  
-}
-
+};

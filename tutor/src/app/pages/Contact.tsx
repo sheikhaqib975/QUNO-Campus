@@ -133,8 +133,8 @@ const Contact: React.FC = () => {
               padding: '1.2rem',
               background: isSubmitting
                 ? '#999'
-                : 'linear-gradient(135deg, #f8f41d 0%, #1460ec 100%)',
-              border: 'none',
+                : 'linear-gradient(135deg, yellow)',
+              border: '2px solid #000',
               borderRadius: '8px',
               color: '#000',
               fontSize: '1.1rem',

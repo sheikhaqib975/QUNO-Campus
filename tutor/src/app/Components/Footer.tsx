@@ -1,9 +1,14 @@
-import email from '../assets/images/email.png';
-import phone from '../assets/images/phone.png';
-import facebook from '../assets/images/facebook.png';
-import linkedin from '../assets/images/linkedin.png';
+'use client';
+import { useRouter } from 'next/navigation';
+
+const email = { src: 'images/email.png' };
+const phone = { src: 'images/phone.png' };
+const facebook = { src: 'images/facebook.png' };
+const linkedin = { src: 'images/linkedin.png' };
 
 function Footer() {
+  const router = useRouter();
+
   return (
     <div style={styles.footer}>
       {/* Call to Action Section */}
@@ -13,9 +18,15 @@ function Footer() {
           <p style={styles.ctaSubtitle}>
             Join thousands of students who have improved their grades and confidence with our personalized tutoring approach.
           </p>
+
           <div style={styles.ctaButtons}>
-            <button style={styles.ctaPrimaryButton}>Start Your Free Trial</button>
-            <button style={styles.ctaSecondaryButton}>Schedule a Demo</button>
+            <button
+              style={styles.ctaPrimaryButton}
+              onClick={() => router.push('/trial')}
+            >
+              Start Your Free Trial
+            </button>
+            {/* <button style={styles.ctaSecondaryButton}>Schedule a Demo</button> */}
           </div>
         </div>
       </section>
@@ -24,20 +35,44 @@ function Footer() {
       <div style={styles.footerContent}>
         <div style={styles.footerColumn}>
           <div style={styles.footerLogo}>
-            <span style={styles.logoIcon}>📚</span>
+            {/* <img src="qunologo.png" alt="logo" /> */}
             <span style={styles.logoText}>QUNO CAMPUS</span>
           </div>
           <p style={styles.footerDescription}>
             Empowering students to achieve academic excellence through personalized tutoring and expert guidance.
           </p>
-                     <div style={styles.socialIcons}>
-             <img src={email.src} alt="Email" style={styles.socialIcon} />
-             <img src={phone.src} alt="Phone" style={styles.socialIcon} />
-             <img src={facebook.src} alt="Facebook" style={styles.socialIcon} />
-             <img src={linkedin.src} alt="LinkedIn" style={styles.socialIcon} />
-           </div>
+          <div style={styles.socialIcons}>
+          
+ <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=qunocampus@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ color: 'inherit', textDecoration: 'none', marginLeft: '8px' }}
+>
+  <img src={email.src} alt="Email" style={styles.socialIcon} />
+</a>
+
+<img src={phone.src} alt="Phone" style={styles.socialIcon} />
+
+<a
+  href="https://www.facebook.com/profile.php?id=61578943292253"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img src={facebook.src} alt="Facebook" style={styles.socialIcon} />
+</a>
+
+<a
+  href="https://www.linkedin.com/company/quno-campus/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img src={linkedin.src} alt="LinkedIn" style={styles.socialIcon} />
+</a>
+
+          </div>
         </div>
-        
+
         <div style={styles.footerColumn}>
           <h3 style={styles.footerTitle}>Our Services</h3>
           <ul style={styles.footerList}>
@@ -47,7 +82,7 @@ function Footer() {
             <li style={styles.footerItem}>→ Test Preparation</li>
           </ul>
         </div>
-        
+
         <div style={styles.footerColumn}>
           <h3 style={styles.footerTitle}>Quick Links</h3>
           <ul style={styles.footerList}>
@@ -57,39 +92,39 @@ function Footer() {
             <li style={styles.footerItem}>→ Contact Us</li>
           </ul>
         </div>
-        
+
         <div style={styles.footerColumn}>
           <h3 style={styles.footerTitle}>Get In Touch</h3>
-                     <div style={styles.contactInfo}>
-             <div style={styles.contactItem}>
-               <img src={email.src} alt="Email" style={styles.contactIcon} />
-               <span>qunocampus@gmail.com</span>
-             </div>
-             <div style={styles.contactItem}>
-               <img src={phone.src} alt="Phone" style={styles.contactIcon} />
-               <span>+92 347 1684085 (WhatsApp)</span>
-             </div>
-             <div style={styles.contactItem}>
-               <img src={linkedin.src} alt="LinkedIn" style={styles.contactIcon} />
-               <span>LinkedIn</span>
-             </div>
-           </div>
-        </div>
-      </div>
+          <div style={styles.contactInfo}>
+            <div style={styles.contactItem}>
+               <img src={email.src} alt="email" width={16} height={16} />
+  <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=qunocampus@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ color: 'inherit', textDecoration: 'none', marginLeft: '8px' }}
+  >
+    qunocampus@gmail.com
+  </a>
+            </div>
 
-      {/* Newsletter Section */}
-      <div style={styles.newsletterSection}>
-        <h3 style={styles.newsletterTitle}>Stay Updated with Learning Tips!</h3>
-        <p style={styles.newsletterSubtitle}>
-          Get weekly study tips, academic insights, and exclusive offers.
-        </p>
-        <div style={styles.newsletterForm}>
-          <input 
-            type="email" 
-            placeholder="Enter your email" 
-            style={styles.newsletterInput}
-          />
-          <button style={styles.newsletterButton}>Subscribe</button>
+            <div style={styles.contactItem}>
+              <img src={phone.src} alt="Phone" style={styles.contactIcon} />
+              <span>+92 347 1684085 (WhatsApp)</span>
+            </div>
+
+            <div style={styles.contactItem}>
+               <img src={email.src} alt="email" width={16} height={16} />
+  <a
+     href="https://www.linkedin.com/company/quno-campus/"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ color: 'inherit', textDecoration: 'none', marginLeft: '8px' }}
+  >
+    LinkedIn
+  </a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -109,7 +144,6 @@ function Footer() {
     </div>
   );
 }
-
 const styles: { [key: string]: React.CSSProperties } = {
   footer: {
     backgroundColor: '#0f172a',
@@ -145,9 +179,9 @@ const styles: { [key: string]: React.CSSProperties } = {
     flexWrap: 'wrap',
   },
   ctaPrimaryButton: {
-    backgroundColor: 'white',
-    color: '#1e3a8a',
-    border: 'none',
+    backgroundColor: 'yellow',
+    color: 'black',
+    border: '2px solid black',
     padding: '0.75rem 1.5rem',
     borderRadius: '8px',
     fontSize: '1rem',
@@ -155,17 +189,17 @@ const styles: { [key: string]: React.CSSProperties } = {
     cursor: 'pointer',
     transition: 'transform 0.2s ease',
   },
-  ctaSecondaryButton: {
-    backgroundColor: 'transparent',
-    color: 'white',
-    border: '2px solid white',
-    padding: '0.75rem 1.5rem',
-    borderRadius: '8px',
-    fontSize: '1rem',
-    fontWeight: '600',
-    cursor: 'pointer',
-    transition: 'transform 0.2s ease',
-  },
+  // ctaSecondaryButton: {
+  //   backgroundColor: 'transparent',
+  //   color: 'white',
+  //   border: '2px solid white',
+  //   padding: '0.75rem 1.5rem',
+  //   borderRadius: '8px',
+  //   fontSize: '1rem',
+  //   fontWeight: '600',
+  //   cursor: 'pointer',
+  //   transition: 'transform 0.2s ease',
+  // },
   footerContent: {
     maxWidth: '1200px',
     margin: '0 auto',
@@ -205,7 +239,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     width: '20px',
     height: '20px',
     backgroundColor: '#1e3a8a',
-    borderRadius: '50%',
+    borderRadius: '30%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -240,9 +274,10 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontSize: '0.9rem',
   },
   contactIcon: {
-    width: '20px',
-    height: '20px',
+    width: '15px',
+    height: '15px',
     objectFit: 'contain',
+    
   },
   newsletterSection: {
     backgroundColor: '#1e3a8a',
