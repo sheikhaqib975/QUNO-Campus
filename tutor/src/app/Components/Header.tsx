@@ -1,16 +1,15 @@
 'use client';
-import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 
+const email = { src: '/images/email.png' };
+const phone = { src: '/images/phone.png' };
+const facebook = { src: '/images/facebook.png' };
+const linkedin = { src: '/images/linkedin.png' };
+const instagram = { src: '/images/instagram.png' };
+const tiktok = { src: '/images/tiktok.png' };
 
-const email = { src: 'images/email.png' };
-const phone = { src: 'images/phone.png' };
-const facebook = { src: 'images/facebook.png' };
-const linkedin = { src: 'images/linkedin.png' };
-const instagram = { src: 'images/instagram.png' };
-const tiktok = { src: 'images/tiktok.png' };
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [testPrepDropdown, setTestPrepDropdown] = useState(false);
@@ -54,84 +53,96 @@ const Header = () => {
         }
       `}</style>
 
-<div style={styles.container}>
-  <div className="top-bar-desktop" style={styles.topBar}>
-    {/* LEFT */}
-    <div style={styles.topBarLeft}>
-      <div style={styles.contactItem}>
-        <img src={phone.src} alt="phone" width={16} height={16} />
-        <span>+92 347 1684085</span>
+      <div style={styles.container}>
+        <div className="top-bar-desktop" style={styles.topBar}>
+          {/* LEFT */}
+          <div style={styles.topBarLeft}>
+            <div style={styles.contactItem}>
+              <img src={phone.src} alt="phone" width={16} height={16} />
+              <span>+92 347 1684085</span>
+            </div>
+            <div style={styles.contactItem}>
+              <img src={email.src} alt="email" width={16} height={16} />
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=qunocampus@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'inherit', textDecoration: 'none', marginLeft: '8px' }}
+              >
+                qunocampus@gmail.com
+              </a>
+            </div>
+          </div>
+
+          {/* CENTER */}
+          <div style={styles.topBarCenter}>
+            Get assistance in all main subjects –{' '}
+            <span style={{ color: '#ffffffff' }}>and many more</span>
+          </div>
+
+          {/* RIGHT */}
+          <div style={styles.topBarRight}>
+            <a
+              href="https://www.facebook.com/profile.php?id=61578943292253"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={facebook.src} alt="Facebook" width={16} height={16} style={styles.iconWhite} />
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@quno_campus"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={tiktok.src} alt="TikTok" width={16} height={16} style={styles.iconWhite} />
+            </a>
+
+            <a
+              href="https://www.instagram.com/quno_campus?igsh=MTFlNTY4dnE4dGNpbw=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={instagram.src} alt="Instagram" width={16} height={16} style={styles.iconWhite} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/company/quno-campus/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={linkedin.src} alt="LinkedIn" width={16} height={16} style={styles.iconWhite} />
+            </a>
+          </div>
+        </div>
       </div>
-     <div style={styles.contactItem}>
-  <img src={email.src} alt="email" width={16} height={16} />
-  <a
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=qunocampus@gmail.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{ color: 'inherit', textDecoration: 'none', marginLeft: '8px' }}
-  >
-    qunocampus@gmail.com
-  </a>
-</div>
-
-
-    </div>
-
-    {/* CENTER */}
-    <div style={styles.topBarCenter}>
-      Get assistance in all main subjects –{' '}
-      <span style={{ color: '#ffffffff' }}>and many more</span>
-    </div>
-
-   {/* RIGHT */}
-<div style={styles.topBarRight}>
-  <a
-    href="https://www.facebook.com/profile.php?id=61578943292253"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img src={facebook.src} alt="Facebook" width={16} height={16} style={styles.iconWhite} />
-  </a>
-
- <a
-  href="https://www.tiktok.com/@quno_campus"
-  target="_blank"
-  rel="noopener noreferrer"
->
-    <img src={tiktok.src} alt="TikTok" width={16} height={16} style={styles.iconWhite} />
-  </a>
-
-  <a
-    href="https://www.instagram.com/quno_campus?igsh=MTFlNTY4dnE4dGNpbw=="
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img src={instagram.src} alt="Instagram" width={16} height={16} style={styles.iconWhite} />
-  </a>
-
-  <a
-    href="https://www.linkedin.com/company/quno-campus/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img src={linkedin.src} alt="LinkedIn" width={16} height={16} style={styles.iconWhite} />
-  </a>
-</div>
-  </div>
-</div>
-
 
       {/* Main Navigation Bar */}
       <nav style={styles.navbar}>
         <div style={styles.logo}>
           <div style={styles.logoContainer}>
-            <Image
+            <img
               src="/qunologo.png"
               alt="QUNO Logo"
               width={40}
               height={40}
-              style={styles.logoImage}
+              style={{...styles.logoImage, cursor: 'pointer'}}
               onClick={() => router.push('/')}
+              onError={(e) => {
+                console.error('Logo failed to load:', e);
+                // Fallback to text if image fails
+                e.currentTarget.style.display = 'none';
+                const textLogo = document.createElement('div');
+                textLogo.textContent = 'QUNO';
+                textLogo.style.cssText = `
+                  font-size: 24px;
+                  font-weight: bold;
+                  color: #1e3a8a;
+                  cursor: pointer;
+                `;
+                textLogo.onclick = () => router.push('/');
+                e.currentTarget.parentNode?.appendChild(textLogo);
+              }}
             />
           </div>
         </div>
@@ -181,6 +192,7 @@ const Header = () => {
                   pathname === '/sat' || pathname === '/gre'
                     ? '#2563eb'
                     : '#374151',
+                cursor: 'pointer',
               }}
             >
               Test Prep <span style={styles.dropdownArrow}>▼</span>
@@ -191,6 +203,12 @@ const Header = () => {
                   href="/sat"
                   style={styles.dropdownItem}
                   onClick={() => setTestPrepDropdown(false)}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#f3f4f6';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }}
                 >
                   SAT/ACT
                 </Link>
@@ -198,6 +216,12 @@ const Header = () => {
                   href="/gre"
                   style={styles.dropdownItem}
                   onClick={() => setTestPrepDropdown(false)}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#f3f4f6';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }}
                 >
                   NAPLAN
                 </Link>
@@ -226,7 +250,18 @@ const Header = () => {
 
         {/* Right Section */}
         <div className="desktop-nav" style={styles.rightSection}>
-          <Link href="/trial" style={styles.freeTrialButton}>
+          <Link 
+            href="/trial" 
+            style={styles.freeTrialButton}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#fbbf24';
+              e.currentTarget.style.transform = 'translateY(-1px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'yellow';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
+          >
             Free Trial
           </Link>
           <Link
@@ -262,8 +297,11 @@ const Header = () => {
           </Link>
           <div style={styles.mobileDropdownContainer}>
             <span
-              style={styles.mobileLink}
-              onClick={() => router.push('/test-prep')}
+              style={{...styles.mobileLink, cursor: 'pointer'}}
+              onClick={() => {
+                router.push('/test-prep');
+                setOpen(false);
+              }}
             >
               Test Prep
             </span>
@@ -282,6 +320,9 @@ const Header = () => {
           <Link href="/contact" style={styles.mobileLink} onClick={() => setOpen(false)}>
             Contact
           </Link>
+          <Link href="/trial" style={styles.mobileLink} onClick={() => setOpen(false)}>
+            Free Trial
+          </Link>
           <Link href="/login" style={styles.mobileLink} onClick={() => setOpen(false)}>
             Login
           </Link>
@@ -289,6 +330,14 @@ const Header = () => {
             Sign Up
           </Link>
         </div>
+
+        {/* Mobile Overlay */}
+        {open && (
+          <div
+            style={styles.overlay}
+            onClick={() => setOpen(false)}
+          />
+        )}
       </nav>
     </>
   );
@@ -299,7 +348,6 @@ const styles: { [key: string]: React.CSSProperties } = {
     width: '100%',
     backgroundColor: '#1e1e6d',
     color: '#fff',
-  
   },
   topBar: {
     maxWidth: '1280px',
@@ -331,9 +379,9 @@ const styles: { [key: string]: React.CSSProperties } = {
     gap: '0.75rem',
   },
   iconWhite: {
-    filter: 'brightness(0) invert(1)', // makes icons white
+    filter: 'brightness(0) invert(1)',
+    transition: 'transform 0.2s ease',
   },
-
   navbar: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -344,6 +392,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     margin: '0 auto',
     position: 'relative',
     zIndex: 100,
+   
   },
   logo: {
     display: 'flex',
@@ -358,6 +407,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   logoImage: {
     objectFit: 'contain',
+    transition: 'transform 0.2s ease',
   },
   navLinks: {
     display: 'flex',
@@ -381,25 +431,27 @@ const styles: { [key: string]: React.CSSProperties } = {
   dropdownArrow: {
     fontSize: '0.75rem',
     marginLeft: '0.25rem',
+    transition: 'transform 0.2s ease',
   },
   dropdown: {
     position: 'absolute',
     top: '100%',
     left: '0',
     backgroundColor: 'white',
-    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-    borderRadius: '0.375rem',
+    boxShadow: '0 8px 25px rgba(0,0,0,0.15)',
+    borderRadius: '0.5rem',
     padding: '0.5rem 0',
     minWidth: '150px',
     zIndex: 1000,
+    border: '1px solid #e5e7eb',
   },
   dropdownItem: {
     display: 'block',
-    padding: '0.5rem 1rem',
+    padding: '0.75rem 1rem',
     textDecoration: 'none',
     color: '#374151',
     fontSize: '0.875rem',
-    transition: 'background-color 0.2s ease',
+    transition: 'all 0.2s ease',
   },
   rightSection: {
     display: 'flex',
@@ -411,13 +463,14 @@ const styles: { [key: string]: React.CSSProperties } = {
   freeTrialButton: {
     backgroundColor: 'yellow',
     color: 'black',
-    padding: '0.5rem 1.25rem',
+    padding: '0.75rem 1.5rem',
     border: '2px solid black',
-    borderRadius: '0.375rem',
+    borderRadius: '0.5rem',
     textDecoration: 'none',
     fontWeight: '600',
     fontSize: '0.9rem',
-    transition: 'background-color 0.3s ease',
+    transition: 'all 0.3s ease',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
   },
   mobileMenuButton: {
     display: 'none',
@@ -479,6 +532,16 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontWeight: '500',
     fontSize: '1rem',
     padding: '0.5rem 1rem',
+    transition: 'color 0.2s ease',
+  },
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    zIndex: 998,
   },
 };
 

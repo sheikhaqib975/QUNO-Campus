@@ -39,7 +39,7 @@ const Courses = () => {
               
               <div style={styles.courseFeatures}>
                 <span style={styles.feature}>{course.duration}</span>
-                <span style={styles.feature}>{course.tagline}</span>
+                {/* <span style={styles.feature}>{course.tagline}</span> */}
               </div>
               
               <div style={styles.cardFooter}>
@@ -72,7 +72,7 @@ const courseList = [
  {
     title: 'Physics',
     subtitle: 'Fundamental physics concepts',
-    tagline: 'Interactive',
+    // tagline: 'Interactive',
     image: '/images/physics.png',
     slug: 'physics',
     students: '456',
@@ -84,7 +84,7 @@ const courseList = [
   {
     title: 'Quran Pak',
     subtitle: 'Memorization with Tajweed',
-    tagline: 'Personalized',
+    // tagline: 'Personalized',
     image: '/images/quran.png',
     slug: 'quran-pak',
     students: '2,150',
@@ -96,7 +96,7 @@ const courseList = [
   {
     title: 'English & Languages',
     subtitle: 'Communication and fluency',
-    tagline: 'Interactive',
+    // tagline: 'Interactive',
     image: '/images/eng.png',
     slug: 'english-languages',
     students: '1,456',
@@ -108,7 +108,7 @@ const courseList = [
   {
     title: 'Biology',
     subtitle: 'Life sciences and research',
-    tagline: 'Interactive',
+    // tagline: 'Interactive',
     image: '/images/biology.png',
     slug: 'biology',
     students: '534',
@@ -120,7 +120,7 @@ const courseList = [
   {
     title: 'Calculus',
     subtitle: 'Advanced mathematical concepts',
-    tagline: 'Interactive',
+    // tagline: 'Interactive',
     image: '/images/calculus.png',
     slug: 'calculus',
     students: '423',
@@ -132,7 +132,7 @@ const courseList = [
   {
     title: 'Accounting',
     subtitle: 'Financial principles and analysis',
-    tagline: 'Interactive',
+    // tagline: 'Interactive',
     image: '/images/acc.png',
     slug: 'accounting',
     students: '678',
@@ -144,7 +144,7 @@ const courseList = [
   {
     title: 'Economics',
     subtitle: 'Economic principles and analysis',
-    tagline: 'Interactive',
+    // tagline: 'Interactive',
     image: '/images/economics.png',
     slug: 'economics',
     students: '367',
@@ -157,7 +157,7 @@ const courseList = [
   {
     title: 'Statistics',
     subtitle: 'Data analysis and interpretation',
-    tagline: 'Interactive',
+    // tagline: 'Interactive',
     image: '/images/stats.png',
     slug: 'statistics',
     students: '612',
@@ -169,7 +169,7 @@ const courseList = [
    {
     title: 'MS Office',
     subtitle: 'Productivity and office tools',
-    tagline: 'Interactive',
+    // tagline: 'Interactive',
     image: '/images/office.png',
     slug: 'ms-office',
     students: '1,789',
@@ -181,7 +181,7 @@ const courseList = [
   {
     title: 'Graphic Designing',
     subtitle: 'Creative design with industry tools',
-    tagline: 'All Subjects',
+    // tagline: 'All Subjects',
     image: '/images/graphicdesigning.png',
     slug: 'graphic-designing',
     students: '890',
@@ -193,7 +193,7 @@ const courseList = [
   {
     title: 'AutoCAD',
     subtitle: '2D/3D design and modeling',
-    tagline: 'All Subjects',
+    // tagline: 'All Subjects',
     image: '/images/autocad.png',
     slug: 'autocad',
     students: '567',
@@ -205,7 +205,7 @@ const courseList = [
   {
     title: 'Design and Development',
     subtitle: 'Full-stack web development',
-    tagline: 'Hands-on',
+    // tagline: 'Hands-on',
     image: '/images/dd.png',
     slug: 'design-and-development',
     students: '723',
@@ -217,7 +217,7 @@ const courseList = [
   {
     title: 'Basic Networking',
     subtitle: 'Network fundamentals and setup',
-    tagline: 'Hands-on',
+    // tagline: 'Hands-on',
     image: '/images/networking.png',
     slug: 'basic-networking',
     students: '445',
@@ -230,7 +230,7 @@ const courseList = [
   {
     title: 'Web Development .NET',
     subtitle: 'ASP.NET and C# development',
-    tagline: 'Practical',
+    // tagline: 'Practical',
     image: '/images/web.png',
     slug: 'web-development-dotnet',
     students: '634',
@@ -243,7 +243,7 @@ const courseList = [
   {
     title: 'C++',
     subtitle: 'Programming and OOP concepts',
-    tagline: 'Interactive',
+    // tagline: 'Interactive',
     image: '/images/C.png',
     slug: 'cpp',
     students: '892',
@@ -257,7 +257,7 @@ const courseList = [
    {
     title: 'Artificial Intelligence',
     subtitle: 'Master AI, ML, and Deep Learning',
-    tagline: 'All Subjects',
+    // tagline: 'All Subjects',
     image: '/images/aicourse.png',
     slug: 'artificial-intelligence',
     students: '1,250',
@@ -269,7 +269,7 @@ const courseList = [
   {
     title: 'PHP',
     subtitle: 'Server side scripting',
-    tagline: 'Interactive',
+    // tagline: 'Interactive',
     image: '/images/aicourse.png',
     slug: 'artificial-intelligence',
     students: '1,200',
@@ -281,7 +281,7 @@ const courseList = [
   {
     title: 'Flutter',
     subtitle: 'Master AI, ML, and Deep Learning',
-    tagline: 'All Subjects',
+    // tagline: 'All Subjects',
     image: '/images/aicourse.png',
     slug: 'artificial-intelligence',
     students: '1,250',

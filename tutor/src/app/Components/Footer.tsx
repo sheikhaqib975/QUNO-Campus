@@ -1,10 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
 
-const email = { src: 'images/email.png' };
-const phone = { src: 'images/phone.png' };
-const facebook = { src: 'images/facebook.png' };
-const linkedin = { src: 'images/linkedin.png' };
 
 function Footer() {
   const router = useRouter();
@@ -49,17 +45,17 @@ function Footer() {
   rel="noopener noreferrer"
   style={{ color: 'inherit', textDecoration: 'none', marginLeft: '8px' }}
 >
-  <img src={email.src} alt="Email" style={styles.socialIcon} />
+  <img src="images/email.png" alt="Email" style={styles.socialIcon} />
 </a>
 
-<img src={phone.src} alt="Phone" style={styles.socialIcon} />
+<img src="images/phone.png"  alt="Phone" style={styles.socialIcon} />
 
 <a
   href="https://www.facebook.com/profile.php?id=61578943292253"
   target="_blank"
   rel="noopener noreferrer"
 >
-  <img src={facebook.src} alt="Facebook" style={styles.socialIcon} />
+  <img src="images/facebook.png"  alt="Facebook" style={styles.socialIcon} />
 </a>
 
 <a
@@ -67,7 +63,7 @@ function Footer() {
   target="_blank"
   rel="noopener noreferrer"
 >
-  <img src={linkedin.src} alt="LinkedIn" style={styles.socialIcon} />
+  <img src="images/linkedin.png"  alt="LinkedIn" style={styles.socialIcon} />
 </a>
 
           </div>
@@ -97,7 +93,7 @@ function Footer() {
           <h3 style={styles.footerTitle}>Get In Touch</h3>
           <div style={styles.contactInfo}>
             <div style={styles.contactItem}>
-               <img src={email.src} alt="email" width={16} height={16} />
+               <img src="images/email.png"  alt="email" width={16} height={16} />
   <a
     href="https://mail.google.com/mail/?view=cm&fs=1&to=qunocampus@gmail.com"
     target="_blank"
@@ -109,12 +105,12 @@ function Footer() {
             </div>
 
             <div style={styles.contactItem}>
-              <img src={phone.src} alt="Phone" style={styles.contactIcon} />
+              <img src="images/phone.png"  alt="Phone" style={styles.contactIcon} />
               <span>+92 347 1684085 (WhatsApp)</span>
             </div>
 
             <div style={styles.contactItem}>
-               <img src={email.src} alt="email" width={16} height={16} />
+               <img src="images/email.png"  alt="email" width={16} height={16} />
   <a
      href="https://www.linkedin.com/company/quno-campus/"
     target="_blank"

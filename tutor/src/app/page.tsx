@@ -7,6 +7,10 @@ export default function Home() {
   const handleBookTrial = () => {
     router.push('/trial');
   };
+  const handleexplorecourses = () => {
+    router.push('/courses');
+  };
+  
 
   return (
     <div style={styles.container}>
@@ -31,7 +35,7 @@ export default function Home() {
                 <span style={styles.arrow}></span>
               </button>
              
-              <button style={styles.primaryButton} onClick={handleBookTrial}>
+              <button style={styles.primaryButton} onClick={handleexplorecourses}>
                 Explore Courses
                 <span style={styles.arrow}></span>
               </button>
@@ -173,7 +177,7 @@ export default function Home() {
               <span style={styles.star}>★★★★★</span>
               {/* <span>All Subjects</span> */}
             </div>
-            <button style={styles.courseButton}>Learn More</button>
+            <button style={styles.courseButton} >Learn More</button>
           </div>
 
           <div style={styles.courseCard}>

@@ -1,5 +1,5 @@
 'use client';
-
+import { useRouter } from 'next/navigation';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import React from 'react';
@@ -21,136 +21,225 @@ interface CourseDetail {
 }
 
 const courseDetails: Record<string, CourseDetail> = {
-  'artificial-intelligence': {
+  
+ 'artificial-intelligence': {
     title: 'Artificial Intelligence',
-    description: 'Comprehensive AI course covering machine learning, deep learning, and intelligent systems. Learn how AI is transforming industries with real-world applications and hands-on projects.',
+    description: 'A comprehensive course on Artificial Intelligence covering machine learning, deep learning, and advanced AI concepts. Gain hands-on experience in building intelligent systems, applying AI to real-world problems, and exploring cutting-edge research trends.',
     duration: '16 weeks',
     level: 'Intermediate to Advanced',
-    prerequisites: ['Basic Python Programming', 'Mathematics (Linear Algebra, Statistics)', 'Computer Science Fundamentals'],
+    prerequisites: ['Basic Python Programming', 'Mathematics (Linear Algebra, Statistics, Probability)', 'Computer Science Fundamentals'],
     curriculum: [
-      'Introduction to AI and Machine Learning',
-      'Python for AI Development',
-      'Supervised Learning Algorithms',
-      'Unsupervised Learning and Clustering',
-      'Deep Learning and Neural Networks',
-      'Natural Language Processing',
-      'Computer Vision',
-      'Reinforcement Learning',
-      'AI Ethics and Future Trends',
-      'Capstone Project'
+      'Introduction to Artificial Intelligence and its Applications',
+      'Python Tools and Libraries for AI (NumPy, Pandas, Scikit-learn, TensorFlow, PyTorch)',
+      'Supervised Learning: Regression and Classification',
+      'Unsupervised Learning: Clustering and Dimensionality Reduction',
+      'Deep Learning Fundamentals and Neural Network Architectures',
+      'Natural Language Processing (Text Classification, Chatbots, Transformers)',
+      'Computer Vision (Image Classification, Object Detection, Image Generation)',
+      'Reinforcement Learning and Decision Making',
+      'Ethics, Bias, and Responsible AI Development',
+      'Capstone Project: End-to-End AI Solution'
     ],
-    skills: ['Machine Learning', 'Deep Learning', 'Python', 'TensorFlow', 'PyTorch', 'Data Analysis', 'Neural Networks'],
-    career: ['AI Engineer', 'Machine Learning Engineer', 'Data Scientist', 'Research Scientist', 'AI Consultant'],
-    instructor: 'Dr. Ahmad Hassan',
-    price: 'PKR 45,000',
-    students: 1250,
-    rating: 4.8,
-    image: '/images/aicourse.png'
+
+
+    skills: [
+  'Machine Learning',
+  'Deep Learning',
+  'Python Programming',
+  'TensorFlow',
+  'PyTorch',
+  'Data Analysis & Visualization',
+  'Neural Networks',
+  'Natural Language Processing',
+  'Computer Vision',
+  'Model Deployment'
+],
+career: [
+  'AI Engineer',
+  'Machine Learning Engineer',
+  'Data Scientist',
+  'Computer Vision Engineer',
+  'Natural Language Processing Engineer',
+  'AI Research Scientist',
+  'AI Consultant'
+],
+instructor: 'Dr. Ahmad Hassan',
+price: 'PKR 45,000',
+students: 1250,
+rating: 4.8,
+image: '/images/aicourse.png'
   },
+
   'graphic-designing': {
     title: 'Graphic Designing',
-    description: 'Master professional graphic design tools and techniques. Create visually compelling designs and build a comprehensive portfolio for your creative career.',
+    description: 'Learn professional graphic design principles, tools, and techniques to create visually impactful designs. Develop skills in digital and print media, branding, and creative storytelling while building a strong portfolio for your career.',
     duration: '12 weeks',
     level: 'Beginner to Intermediate',
     prerequisites: ['Basic Computer Skills', 'Creative Mindset', 'No Prior Design Experience Required'],
     curriculum: [
-      'Design Fundamentals and Color Theory',
+      'Introduction to Graphic Design & Design Principles',
+      'Color Theory and Visual Hierarchy',
       'Adobe Photoshop Mastery',
       'Adobe Illustrator Techniques',
       'Typography and Layout Design',
-      'Logo Design and Branding',
-      'Print Design and Prepress',
-      'Digital Design and Web Graphics',
-      'Portfolio Development',
-      'Client Communication and Freelancing',
-      'Final Portfolio Presentation'
+      'Logo Design, Branding & Identity Creation',
+      'Print Design, Packaging & Prepress',
+      'Digital Design for Social Media & Web Graphics',
+      'Portfolio Development and Presentation Skills',
+      'Client Communication, Freelancing, and Career Guidance'
     ],
-    skills: ['Adobe Photoshop', 'Adobe Illustrator', 'Typography', 'Branding', 'Layout Design', 'Digital Art'],
-    career: ['Graphic Designer', 'Brand Designer', 'Creative Director', 'Freelance Designer', 'UI Designer'],
+    skills: [
+      'Adobe Photoshop',
+      'Adobe Illustrator',
+      'Typography',
+      'Branding & Identity Design',
+      'Layout Design',
+      'Digital Art',
+      'Social Media Graphics',
+      'Packaging Design'
+    ],
+    career: [
+      'Graphic Designer',
+      'Brand Designer',
+      'Creative Director',
+      'Freelance Designer',
+      'UI Designer',
+      'Visual Content Creator'
+    ],
     instructor: 'Fatima Khan',
     price: 'PKR 28,000',
     students: 890,
     rating: 4.7,
     image: '/images/graphicdesigning.png'
-  },
+},
+
   'autocad': {
     title: 'AutoCAD',
-    description: 'Learn professional 2D drafting and 3D modeling using AutoCAD. Get hands-on experience in architectural and engineering design with industry-standard practices.',
+    description: 'Master 2D drafting and 3D modeling with AutoCAD, the industry-leading CAD software. Learn to create precise technical drawings, architectural plans, and engineering models using professional design standards.',
     duration: '10 weeks',
     level: 'Beginner to Intermediate',
     prerequisites: ['Basic Computer Skills', 'Understanding of Technical Drawing', 'Mathematics (Geometry)'],
     curriculum: [
-      'AutoCAD Interface and Basic Commands',
-      '2D Drawing and Editing Tools',
-      'Layers, Blocks, and Attributes',
-      'Dimensioning and Annotations',
-      'Advanced 2D Techniques',
-      'Introduction to 3D Modeling',
-      '3D Solid Modeling',
-      'Rendering and Visualization',
-      'Layout and Plotting',
-      'Industry-Specific Applications'
+      'Introduction to AutoCAD and User Interface',
+      'Basic Drawing, Editing, and Navigation Tools',
+      'Working with Layers, Blocks, and Attributes',
+      'Dimensioning, Annotations, and Text Styles',
+      'Advanced 2D Drafting Techniques',
+      'Introduction to 3D Modeling Concepts',
+      'Creating 3D Solids, Surfaces, and Wireframes',
+      'Rendering, Lighting, and Visualization Techniques',
+      'Layouts, Viewports, and Printing/Plotting',
+      'Industry Applications in Architecture, Engineering, and Manufacturing'
     ],
-    skills: ['AutoCAD 2D', 'AutoCAD 3D', 'Technical Drawing', 'CAD Design', 'Engineering Graphics'],
-    career: ['CAD Designer', 'Drafting Technician', 'Architect', 'Engineering Designer', 'Technical Illustrator'],
+    skills: [
+      'AutoCAD 2D Drafting',
+      'AutoCAD 3D Modeling',
+      'Technical Drawing Interpretation',
+      'CAD Design Standards',
+      'Engineering Graphics',
+      'Architectural Drafting'
+    ],
+    career: [
+      'CAD Designer',
+      'Drafting Technician',
+      'Architectural Designer',
+      'Engineering Designer',
+      'Technical Illustrator',
+      'Mechanical Draftsman'
+    ],
     instructor: 'Eng. Muhammad Ali',
     price: 'PKR 22,000',
     students: 567,
     rating: 4.6,
     image: '/images/autocad.png'
-  },
+},
+
   'design-and-development': {
     title: 'Design and Development',
-    description: 'Comprehensive course covering UI/UX design principles and full-stack development. Build user-centric applications from conception to deployment.',
+    description: 'A comprehensive course combining UI/UX design principles with full-stack web development. Learn to create user-friendly, responsive, and high-performance applications from concept to deployment using modern tools and frameworks.',
     duration: '20 weeks',
     level: 'Intermediate',
     prerequisites: ['Basic HTML/CSS', 'JavaScript Fundamentals', 'Design Thinking'],
     curriculum: [
-      'UI/UX Design Principles',
-      'User Research and Personas',
-      'Wireframing and Prototyping',
-      'Frontend Development (React/Next.js)',
-      'Backend Development (Node.js)',
-      'Database Design and Management',
-      'API Development and Integration',
-      'Responsive Design Implementation',
-      'Testing and Quality Assurance',
-      'Deployment and DevOps'
+      'Introduction to UI/UX and Human-Centered Design',
+      'User Research, Personas, and Journey Mapping',
+      'Wireframing, Prototyping, and Design Systems',
+      'Frontend Development with React and Next.js',
+      'Backend Development with Node.js and Express',
+      'Database Design, SQL & NoSQL Integration',
+      'RESTful APIs and Third-Party API Integration',
+      'Responsive and Mobile-First Design Implementation',
+      'Testing, Debugging, and Quality Assurance',
+      'Deployment, DevOps, and Continuous Integration'
     ],
-    skills: ['UI/UX Design', 'React', 'Node.js', 'JavaScript', 'Database Design', 'API Development'],
-    career: ['Full Stack Developer', 'UI/UX Designer', 'Frontend Developer', 'Product Designer', 'Web Developer'],
+    skills: [
+      'UI/UX Design',
+      'Wireframing & Prototyping',
+      'React',
+      'Next.js',
+      'Node.js',
+      'JavaScript (ES6+)',
+      'Database Design (SQL & NoSQL)',
+      'API Development & Integration',
+      'Responsive Web Design',
+      'Version Control (Git/GitHub)'
+    ],
+    career: [
+      'Full Stack Developer',
+      'UI/UX Designer',
+      'Frontend Developer',
+      'Product Designer',
+      'Web Developer',
+      'Software Engineer'
+    ],
     instructor: 'Sarah Ahmed',
     price: 'PKR 55,000',
     students: 723,
     rating: 4.9,
     image: '/images/dd.png'
-  },
+},
+
   'basic-networking': {
     title: 'Basic Networking',
-    description: 'Comprehensive networking course covering computer networks, protocols, IP addressing, and practical LAN/WAN setup. Perfect foundation for IT careers.',
+    description: 'Learn the fundamentals of computer networking, including network types, protocols, IP addressing, and practical LAN/WAN setup. Gain hands-on experience with switches, routers, and network troubleshooting — the perfect foundation for an IT career.',
     duration: '8 weeks',
     level: 'Beginner',
     prerequisites: ['Basic Computer Knowledge', 'Interest in IT Infrastructure'],
     curriculum: [
-      'Network Fundamentals and Topology',
-      'OSI Model and TCP/IP Suite',
-      'IP Addressing and Subnetting',
-      'Switching and VLANs',
-      'Routing Concepts and Protocols',
-      'Wireless Networking',
-      'Network Security Basics',
-      'Network Troubleshooting',
-      'Hands-on Lab Sessions',
-      'Network Design Project'
+      'Introduction to Networking and Network Types',
+      'Network Topologies and Communication Models',
+      'OSI Model and TCP/IP Protocol Suite',
+      'IP Addressing, Subnetting, and Address Classes',
+      'Switching Concepts, VLANs, and Trunking',
+      'Routing Fundamentals and Common Protocols (RIP, OSPF)',
+      'Wireless Networking Standards and Configuration',
+      'Network Security Fundamentals (Firewalls, Encryption, Access Control)',
+      'Network Troubleshooting Tools and Techniques',
+      'Hands-on Lab: Building and Configuring a Small Network',
+      'Final Network Design and Implementation Project'
     ],
-    skills: ['Network Configuration', 'IP Addressing', 'Router/Switch Setup', 'Network Troubleshooting', 'Security Basics'],
-    career: ['Network Administrator', 'IT Support Specialist', 'Network Technician', 'System Administrator'],
+    skills: [
+      'Network Configuration',
+      'IP Addressing & Subnetting',
+      'Router and Switch Setup',
+      'VLAN Configuration',
+      'Network Troubleshooting',
+      'Basic Network Security'
+    ],
+    career: [
+      'Network Administrator',
+      'IT Support Specialist',
+      'Network Technician',
+      'System Administrator',
+      'Technical Support Engineer'
+    ],
     instructor: 'Usman Malik',
     price: 'PKR 18,000',
     students: 445,
     rating: 4.5,
     image: '/images/networking.png'
-  },
+},
+
   'quran-pak': {
     title: 'Quran Pak',
     description: 'Complete Quranic education including memorization (Hifz), proper recitation with Tajweed, and understanding through Tafsir. Suitable for all ages.',
@@ -178,109 +267,176 @@ const courseDetails: Record<string, CourseDetail> = {
     image: '/images/quran.png'
   },
   'web-development-dotnet': {
-    title: 'Web Development .NET',
-    description: 'Build professional, scalable web applications using ASP.NET, C#, and SQL Server. Master modern web development with Microsoft technologies.',
+    title: 'Web Development with .NET',
+    description: 'Learn to build professional, scalable, and secure web applications using ASP.NET Core, C#, and SQL Server. Master modern full-stack development with Microsoft technologies, from backend logic to frontend integration.',
     duration: '16 weeks',
     level: 'Intermediate',
     prerequisites: ['C# Programming Basics', 'HTML/CSS Knowledge', 'Database Fundamentals'],
     curriculum: [
-      'ASP.NET Core Fundamentals',
-      'MVC Architecture Pattern',
-      'Entity Framework Core',
-      'RESTful API Development',
-      'Authentication and Authorization',
-      'Database Design with SQL Server',
-      'Frontend Integration (Razor/Blazor)',
-      'Testing and Debugging',
-      'Deployment and Azure Services',
-      'Real-world Project Development'
+      'Introduction to ASP.NET Core and Project Setup',
+      'Understanding the MVC Architecture Pattern',
+      'Entity Framework Core for Data Access',
+      'Building and Consuming RESTful APIs',
+      'Authentication, Authorization, and Identity Management',
+      'Database Design and Optimization with SQL Server',
+      'Frontend Integration using Razor Pages and Blazor',
+      'State Management and Session Handling',
+      'Unit Testing, Debugging, and Performance Optimization',
+      'Deployment to IIS and Azure Cloud Services',
+      'Capstone Project: Full-Stack .NET Web Application'
     ],
-    skills: ['ASP.NET Core', 'C#', 'MVC Pattern', 'Entity Framework', 'SQL Server', 'Web APIs'],
-    career: ['.NET Developer', 'Backend Developer', 'Full Stack Developer', 'Software Engineer', 'Web Application Developer'],
+    skills: [
+      'ASP.NET Core Development',
+      'C# Programming',
+      'MVC Design Pattern',
+      'Entity Framework Core',
+      'SQL Server Database Design',
+      'RESTful API Development',
+      'Azure Deployment'
+    ],
+    career: [
+      '.NET Developer',
+      'Backend Developer',
+      'Full Stack Developer',
+      'Software Engineer',
+      'Web Application Developer',
+      'Cloud Application Developer'
+    ],
     instructor: 'Ahsan Raza',
     price: 'PKR 42,000',
     students: 634,
     rating: 4.7,
     image: '/images/web.png'
-  },
-  'english-languages': {
+},
+
+ 'english-languages': {
     title: 'English & Languages',
-    description: 'Comprehensive English language course focusing on communication skills, grammar, vocabulary, and fluency through interactive methods.',
+    description: 'A complete English language course designed to improve grammar, vocabulary, pronunciation, and fluency. Develop strong communication skills for personal, academic, and professional success through interactive lessons and practical exercises.',
     duration: '12 weeks',
     level: 'All Levels',
     prerequisites: ['Basic Literacy', 'Motivation to Learn'],
     curriculum: [
-      'Grammar Fundamentals',
-      'Vocabulary Building Techniques',
-      'Pronunciation and Phonetics',
-      'Reading Comprehension',
-      'Writing Skills Development',
-      'Speaking and Conversation Practice',
-      'Listening Skills Enhancement',
-      'Business English Communication',
-      'Presentation and Public Speaking',
-      'Language Certification Preparation'
+      'Introduction to English Language Skills',
+      'Grammar Fundamentals and Sentence Structure',
+      'Vocabulary Building Strategies and Word Usage',
+      'Pronunciation, Phonetics, and Accent Training',
+      'Reading Comprehension and Critical Thinking',
+      'Writing Skills: Essays, Emails, and Reports',
+      'Speaking Fluency and Everyday Conversation',
+      'Listening Skills and Note-Taking Techniques',
+      'Business English and Workplace Communication',
+      'Presentation, Public Speaking, and Interview Skills',
+      'Language Certification Exam Preparation (IELTS/TOEFL)'
     ],
-    skills: ['English Grammar', 'Vocabulary', 'Speaking Fluency', 'Writing Skills', 'Business Communication'],
-    career: ['English Teacher', 'Translator', 'Content Writer', 'Communication Specialist', 'International Business'],
+    skills: [
+      'English Grammar Mastery',
+      'Vocabulary Expansion',
+      'Fluent Speaking Skills',
+      'Professional Writing',
+      'Business Communication',
+      'Listening Comprehension'
+    ],
+    career: [
+      'English Language Teacher',
+      'Translator or Interpreter',
+      'Content Writer',
+      'Communication Specialist',
+      'International Business Executive',
+      'Corporate Trainer'
+    ],
     instructor: 'Ms. Jennifer Smith',
     price: 'PKR 15,000',
     students: 1456,
     rating: 4.6,
     image: '/images/eng.png'
-  },
-  'cpp': {
-    title: 'C++',
-    description: 'Master C++ programming from fundamentals to advanced concepts. Learn data structures, OOP principles, and build efficient applications.',
+},
+
+ 'cpp': {
+    title: 'C++ Programming',
+    description: 'Learn C++ from the ground up — starting with the fundamentals and advancing to complex programming concepts. Master data structures, object-oriented programming, memory management, and algorithm design to build efficient, high-performance applications.',
     duration: '14 weeks',
     level: 'Beginner to Advanced',
     prerequisites: ['Basic Computer Literacy', 'Logical Thinking', 'Mathematics (Basic Algebra)'],
     curriculum: [
-      'C++ Basics and Syntax',
-      'Data Types and Variables',
-      'Control Structures and Functions',
-      'Arrays and Pointers',
-      'Object-Oriented Programming',
-      'Classes and Objects',
-      'Inheritance and Polymorphism',
-      'Data Structures Implementation',
-      'File Handling and Streams',
-      'Advanced Topics and Projects'
+      'Introduction to C++ and Development Environment Setup',
+      'Basic Syntax, Data Types, and Variables',
+      'Control Structures, Loops, and Functions',
+      'Arrays, Strings, and Pointers',
+      'Object-Oriented Programming Principles',
+      'Classes, Objects, and Constructors/Destructors',
+      'Inheritance, Polymorphism, and Operator Overloading',
+      'Implementing Data Structures (Stacks, Queues, Linked Lists, Trees)',
+      'File Handling, Streams, and Error Management',
+      'Memory Management and Dynamic Allocation',
+      'Advanced Topics: Templates, STL, and Multithreading',
+      'Capstone Project: Real-World C++ Application'
     ],
-    skills: ['C++ Programming', 'OOP Concepts', 'Data Structures', 'Algorithm Implementation', 'Problem Solving'],
-    career: ['Software Developer', 'Game Developer', 'System Programmer', 'Embedded Systems Engineer', 'C++ Developer'],
+    skills: [
+      'C++ Programming',
+      'OOP Concepts',
+      'Data Structures & Algorithms',
+      'Problem Solving',
+      'Memory Management',
+      'STL (Standard Template Library)',
+      'Multithreading'
+    ],
+    career: [
+      'Software Developer',
+      'Game Developer',
+      'System Programmer',
+      'Embedded Systems Engineer',
+      'C++ Developer',
+      'Algorithm Engineer'
+    ],
     instructor: 'Dr. Hassan Ali',
     price: 'PKR 25,000',
     students: 892,
     rating: 4.8,
     image: '/images/C.png'
-  },
+},
+
   'accounting': {
     title: 'Accounting',
-    description: 'Comprehensive accounting course covering financial principles, bookkeeping, financial statements, and business analysis for professional success.',
+    description: 'Master the principles of accounting, from bookkeeping to financial reporting. Learn to prepare and analyze financial statements, manage budgets, and use modern accounting software for professional business decision-making.',
     duration: '10 weeks',
     level: 'Beginner to Intermediate',
     prerequisites: ['Basic Mathematics', 'Business Awareness', 'Computer Skills'],
     curriculum: [
-      'Accounting Fundamentals and Principles',
-      'Double Entry Bookkeeping',
-      'Journal Entries and Ledgers',
-      'Financial Statements Preparation',
-      'Cash Flow Analysis',
-      'Cost Accounting Basics',
-      'Budgeting and Forecasting',
-      'Tax Accounting Fundamentals',
-      'Computerized Accounting (QuickBooks)',
-      'Financial Analysis and Reporting'
+      'Introduction to Accounting and Financial Principles',
+      'Double-Entry Bookkeeping and Accounting Cycle',
+      'Journal Entries, Ledgers, and Trial Balance',
+      'Preparation of Financial Statements (Balance Sheet, Income Statement)',
+      'Cash Flow Management and Analysis',
+      'Cost Accounting and Break-Even Analysis',
+      'Budgeting, Forecasting, and Variance Analysis',
+      'Taxation Basics and Compliance',
+      'Computerized Accounting with QuickBooks and Excel',
+      'Financial Analysis, Reporting, and Decision Making'
     ],
-    skills: ['Financial Accounting', 'Bookkeeping', 'Financial Analysis', 'QuickBooks', 'Excel for Accounting'],
-    career: ['Accountant', 'Bookkeeper', 'Financial Analyst', 'Auditor', 'Tax Consultant'],
+    skills: [
+      'Financial Accounting',
+      'Bookkeeping',
+      'Financial Analysis',
+      'QuickBooks',
+      'Excel for Accounting',
+      'Budgeting & Forecasting',
+      'Tax Compliance'
+    ],
+    career: [
+      'Accountant',
+      'Bookkeeper',
+      'Financial Analyst',
+      'Auditor',
+      'Tax Consultant',
+      'Finance Officer'
+    ],
     instructor: 'CA Sadia Malik',
     price: 'PKR 20,000',
     students: 678,
     rating: 4.5,
     image: '/images/acc.png'
-  },
+},
+
   'biology': {
     title: 'Biology',
     description: 'Explore the fascinating world of life sciences from cellular biology to ecosystems. Perfect for students and biology enthusiasts.',
@@ -308,31 +464,32 @@ const courseDetails: Record<string, CourseDetail> = {
     image: '/images/biology.png'
   },
   'calculus': {
-    title: 'Calculus',
-    description: 'Master calculus concepts including limits, derivatives, and integrals with real-world applications in physics, engineering, and economics.',
-    duration: '14 weeks',
-    level: 'Intermediate to Advanced',
-    prerequisites: ['Algebra and Trigonometry', 'Pre-Calculus', 'Strong Mathematical Foundation'],
-    curriculum: [
-      'Limits and Continuity',
-      'Derivatives and Differentiation',
-      'Applications of Derivatives',
-      'Integration Techniques',
-      'Applications of Integrals',
-      'Sequences and Series',
-      'Multivariable Calculus Intro',
-      'Differential Equations Basics',
-      'Real-world Problem Solving',
-      'Advanced Calculus Topics'
-    ],
-    skills: ['Mathematical Analysis', 'Problem Solving', 'Analytical Thinking', 'Mathematical Modeling'],
-    career: ['Mathematician', 'Engineer', 'Data Scientist', 'Economist', 'Physics Researcher'],
-    instructor: 'Dr. Omar Farooq',
-    price: 'PKR 18,000',
-    students: 423,
-    rating: 4.6,
-    image: '/images/calculus.png'
-  },
+  title: 'Calculus',
+  description: 'Master calculus concepts including limits, derivatives, and integrals with real-world applications in physics, engineering, and economics.',
+  duration: '14 weeks',
+  level: 'Intermediate to Advanced',
+  prerequisites: ['Algebra and Trigonometry', 'Pre-Calculus', 'Strong Mathematical Foundation'],
+  curriculum: [
+    'Limits and Continuity',
+    'Derivatives and Differentiation',
+    'Applications of Derivatives',
+    'Integration Techniques',
+    'Applications of Integrals',
+    'Sequences and Series',
+    'Multivariable Calculus Intro',
+    'Differential Equations Basics',
+    'Real-world Problem Solving',
+    'Advanced Calculus Topics'
+  ],
+  skills: ['Analytical Thinking', 'Problem-Solving', 'Mathematical Modelling', 'Critical Thinking', 'Quantitative Reasoning'],
+  career: ['Mathematician', 'Engineer', 'Data Scientist', 'Economist', 'Researcher'],
+  instructor: 'Prof. Imran Siddiqui',
+  price: 'PKR 18,500',
+  students: 487,
+  rating: 4.8,
+  image: '/images/calculus.png'
+},
+
   'ms-office': {
     title: 'MS Office',
     description: 'Complete Microsoft Office suite training covering Word, Excel, PowerPoint, and Outlook to boost productivity and professional efficiency.',
@@ -385,7 +542,9 @@ const courseDetails: Record<string, CourseDetail> = {
     rating: 4.5,
     image: '/images/economics.png'
   },
-  'physics': {
+
+
+  physics: {
     title: 'Physics',
     description: 'Explore fundamental physics concepts including mechanics, thermodynamics, electricity, and magnetism with practical problem-solving approach.',
     duration: '16 weeks',
@@ -411,7 +570,7 @@ const courseDetails: Record<string, CourseDetail> = {
     rating: 4.7,
     image: '/images/physics.png'
   },
-  'statistics': {
+  statistics: {
     title: 'Statistics',
     description: 'Master statistical analysis, probability theory, and data interpretation. Apply statistical methods in business, research, and decision-making.',
     duration: '10 weeks',
@@ -429,8 +588,20 @@ const courseDetails: Record<string, CourseDetail> = {
       'Business Statistics Applications',
       'Research Statistics Project'
     ],
-    skills: ['Statistical Analysis', 'Data Interpretation', 'R Programming', 'Research Methods', 'Statistical Software'],
-    career: ['Data Analyst', 'Statistician', 'Research Analyst', 'Quality Control Analyst', 'Market Researcher'],
+    skills: [
+      'Statistical Analysis',
+      'Data Interpretation',
+      'R Programming',
+      'Research Methods',
+      'Statistical Software'
+    ],
+    career: [
+      'Data Analyst',
+      'Statistician',
+      'Research Analyst',
+      'Quality Control Analyst',
+      'Market Researcher'
+    ],
     instructor: 'Dr. Nadia Ahmed',
     price: 'PKR 26,000',
     students: 612,
@@ -554,11 +725,11 @@ const styles: { [key: string]: React.CSSProperties } = {
     marginTop: '0.5rem',
   },
   enrollButton: {
-    backgroundColor: '#3b82f6',
-    color: 'white',
+    backgroundColor: 'yellow',
+    color: 'black',
     padding: '1rem 2rem',
     borderRadius: '8px',
-    border: 'none',
+    border: '2px solid black',
     fontSize: '1.1rem',
     fontWeight: 'bold',
     cursor: 'pointer',
@@ -596,8 +767,13 @@ const styles: { [key: string]: React.CSSProperties } = {
 };
 
 export default function CourseDetail() {
+   const router = useRouter();
   const { slug } = useParams();
   const course = courseDetails[slug as string];
+
+   const handleEnrollClick = () => {
+    router.push('/trial'); 
+  };
 
   if (!course) {
     return (
@@ -633,7 +809,8 @@ export default function CourseDetail() {
             {/* Course Overview */}
             <div style={styles.section}>
               <h2 style={styles.sectionTitle}>
-                📚 Course Overview
+               <img src="/images/books.png" alt="logo" style={{ width: '40px', height: '40px' }} />
+ Course Overview
               </h2>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
                 <div>
@@ -656,12 +833,13 @@ export default function CourseDetail() {
             {/* Prerequisites */}
             <div style={styles.section}>
               <h2 style={styles.sectionTitle}>
-                ✅ Prerequisites
+                <img src="/images/pre.png" alt="logo" style={{ width: '40px', height: '40px' }} />
+                 Prerequisites
               </h2>
               <ul style={styles.list}>
                 {course.prerequisites.map((prereq, index) => (
                   <li key={index} style={styles.listItem}>
-                    <span style={{ color: '#059669' }}>✓</span>
+                    <span style={{ color: '#000000ff' }}>✓</span>
                     {prereq}
                   </li>
                 ))}
@@ -671,7 +849,8 @@ export default function CourseDetail() {
             {/* Curriculum */}
             <div style={styles.section}>
               <h2 style={styles.sectionTitle}>
-                📖 Curriculum
+                  <img src="/images/curriculum.png" alt="logo" style={{ width: '40px', height: '40px' }} />
+                 Curriculum
               </h2>
               <ul style={styles.list}>
                 {course.curriculum.map((item, index) => (
@@ -699,7 +878,8 @@ export default function CourseDetail() {
             {/* Skills You'll Learn */}
             <div style={styles.section}>
               <h2 style={styles.sectionTitle}>
-                🚀 Skills You'll Learn
+                 <img src="/images/skills.png" alt="logo" style={{ width: '40px', height: '40px' }} />
+                  Skills You'll Learn
               </h2>
               <div>
                 {course.skills.map((skill, index) => (
@@ -713,12 +893,13 @@ export default function CourseDetail() {
             {/* Career Opportunities */}
             <div style={styles.section}>
               <h2 style={styles.sectionTitle}>
-                💼 Career Opportunities
+                 <img src="/images/career.png" alt="logo" style={{ width: '40px', height: '40px' }} />
+                  Career Opportunities
               </h2>
               <ul style={styles.list}>
                 {course.career.map((career, index) => (
                   <li key={index} style={styles.listItem}>
-                    <span style={{ color: '#059669' }}>💼</span>
+                    <span style={{ color: '#000000ff' }}>•</span>
                     {career}
                   </li>
                 ))}
@@ -745,7 +926,8 @@ export default function CourseDetail() {
 
             {/* Instructor */}
             <div style={styles.instructorCard}>
-              <h3 style={styles.sectionTitle}>👨‍🏫 Instructor</h3>
+              <h3 style={styles.sectionTitle}>    <img src="/images/tutor.png" alt="logo" style={{ width: '40px', height: '40px' }} />
+               Instructor</h3>
               <div style={styles.instructorName}>{course.instructor}</div>
               <p style={{ color: '#64748b', fontSize: '0.9rem' }}>
                 Expert instructor with years of experience in {course.title}
@@ -753,40 +935,39 @@ export default function CourseDetail() {
             </div>
 
             {/* Enroll Button */}
-            <button 
-              style={styles.enrollButton}
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#3b82f6'}
-            >
-              Enroll Now
-            </button>
+             <button 
+      style={styles.enrollButton} 
+      onClick={handleEnrollClick}
+    >
+      Enroll Now
+    </button>
 
             {/* Course Features */}
             <div style={styles.section}>
               <h3 style={styles.sectionTitle}>✨ Course Features</h3>
               <ul style={styles.list}>
                 <li style={styles.listItem}>
-                  <span>📺</span>
+                 <span>✓</span>
                   Interactive Video Lessons
                 </li>
                 <li style={styles.listItem}>
-                  <span>📝</span>
+                  <span>✓</span>
                   Practical Assignments
                 </li>
                 <li style={styles.listItem}>
-                  <span>🏆</span>
+                  <span>✓</span>
                   Completion Certificate
                 </li>
                 <li style={styles.listItem}>
-                  <span>💬</span>
+                  <span>✓</span>
                   24/7 Support
                 </li>
                 <li style={styles.listItem}>
-                  <span>📱</span>
+               <span>✓</span>
                   Mobile Access
                 </li>
                 <li style={styles.listItem}>
-                  <span>⏰</span>
+                  <span>✓</span>
                   Lifetime Access
                 </li>
               </ul>
@@ -794,7 +975,9 @@ export default function CourseDetail() {
 
             {/* Contact Information */}
             <div style={styles.section}>
-              <h3 style={styles.sectionTitle}>📞 Contact Info</h3>
+              <h3 style={styles.sectionTitle}> 
+                 <img src="/images/phoneblack.png" alt="logo" style={{ width: '20px', height: '20px' }} />
+                 Contact Info</h3>
               <div style={{ fontSize: '0.9rem', color: '#64748b' }}>
                 <p style={{ marginBottom: '0.5rem' }}>
                   <strong>Email:</strong> info@courses.com
