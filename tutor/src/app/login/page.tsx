@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
 
 const Login: React.FC = () => {
   const router = useRouter();
@@ -18,6 +18,50 @@ const Login: React.FC = () => {
     router.push('/');
   };
 
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(45deg); }
+        50% { transform: translateY(-20px) rotate(45deg); }
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.1); }
+      }
+      
+      input:focus {
+        border-color: #0000FF !important;
+        box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.1) !important;
+        background: white !important;
+      }
+      
+      button:hover .buttonArrow {
+        transform: translateX(4px);
+      }
+      
+      .socialButton:hover {
+        border-color: #cbd5e0;
+        background: #f7fafc;
+        transform: translateY(-1px);
+      }
+      
+      .signupLink:hover {
+        color: #4169E1;
+      }
+      
+      .forgotLink:hover {
+        color: #4169E1;
+      }
+    `;
+    document.head.appendChild(style);
+
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   return (
     <div style={styles.pageWrapper}>
       {/* Background decorative elements */}
@@ -28,9 +72,9 @@ const Login: React.FC = () => {
       <div style={styles.formContainer}>
         {/* Logo/Brand area */}
         <div style={styles.brandSection}>
-          <div style={styles.logoCircle}>
-            <span style={styles.logoText}>QC</span>
-          </div>
+          {/* <div style={styles.logoCircle}> */}
+           <img src="images/qunologo.png" alt="logo" style={{width:"60px",height:"60px"}} />
+          {/* </div> */}
           <h2 style={styles.heading}>Welcome Back</h2>
           <p style={styles.subheading}>Sign in to your QUNO Campus account</p>
         </div>
@@ -117,7 +161,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     alignItems: 'center',
     justifyContent: 'center',
     padding: '20px',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    // background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     position: 'relative',
     overflow: 'hidden',
   },
@@ -128,7 +172,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     left: '-20%',
     width: '600px',
     height: '600px',
-    background: 'linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
+    // background: 'linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
     borderRadius: '50%',
     transform: 'rotate(45deg)',
     animation: 'float 6s ease-in-out infinite',
@@ -140,7 +184,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     right: '-10%',
     width: '400px',
     height: '400px',
-    background: 'linear-gradient(-45deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03))',
+    // background: 'linear-gradient(-45deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03))',
     borderRadius: '50%',
     animation: 'float 8s ease-in-out infinite reverse',
   },
@@ -151,7 +195,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     right: '10%',
     width: '150px',
     height: '150px',
-    background: 'rgba(255,255,255,0.1)',
+    // background: 'rgba(255,255,255,0.1)',
     borderRadius: '50%',
     animation: 'pulse 4s ease-in-out infinite',
   },
@@ -361,44 +405,5 @@ const styles: { [key: string]: React.CSSProperties } = {
     transition: 'color 0.3s ease',
   },
 };
-
-// Add some CSS animations (would typically be in a separate CSS file)
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(45deg); }
-    50% { transform: translateY(-20px) rotate(45deg); }
-  }
-  
-  @keyframes pulse {
-    0%, 100% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(1.1); }
-  }
-  
-  input:focus {
-    border-color: #0000FF !important;
-    box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.1) !important;
-    background: white !important;
-  }
-  
-  button:hover .buttonArrow {
-    transform: translateX(4px);
-  }
-  
-  .socialButton:hover {
-    border-color: #cbd5e0;
-    background: #f7fafc;
-    transform: translateY(-1px);
-  }
-  
-  .signupLink:hover {
-    color: #4169E1;
-  }
-  
-  .forgotLink:hover {
-    color: #4169E1;
-  }
-`;
-document.head.appendChild(style);
 
 export default Login;

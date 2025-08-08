@@ -25,13 +25,15 @@ export default function Home() {
             </h1>
             <div>
               <p style={styles.description}>
-                Your QUNO Campus provides online tutoring service where our exclusive full-time faculty and highly skilled 
-                tutors are passionately dedicated to student success and score elevation!!
+                Founded in 2023 by Muhammad Usman Ashfaq, QUNO CAMPUS combines academic excellence
+                with modern technology to create an engaging learning environment. Our platform supports students 24/7,
+                offering free trial sessions anytime, daily lectures, weekly tests, and monthly parent-teacher meetings (PTMs).
+                Feedback and progress reports ensure transparent communication with parents.
               </p>
             </div>
             <div style={styles.ctaButtons}>
               <button style={styles.primaryButton} onClick={handleBookTrial}>
-                Join for Free
+                Book Free Trial
                 <span style={styles.arrow}></span>
               </button>
              
@@ -69,7 +71,7 @@ export default function Home() {
               </svg>
             </div>
             <div>
-              <div style={styles.statNumber}>82k</div>
+              <div style={styles.statNumber}>600+</div>
               <div style={styles.statLabel}><b>Students</b><br />Enrolled</div>
             </div>
           </div>
@@ -83,7 +85,7 @@ export default function Home() {
               </svg>
             </div>
             <div>
-              <div style={styles.statNumber}>100k+</div>
+              <div style={styles.statNumber}>350+</div>
               <div style={styles.statLabel}><b>Classes</b><br />Completed</div>
             </div>
           </div>
@@ -97,7 +99,7 @@ export default function Home() {
               </svg>
             </div>
             <div>
-              <div style={styles.statNumber}>415</div>
+              <div style={styles.statNumber}>40</div>
               <div style={styles.statLabel}><b>Top</b><br />Instructors</div>
             </div>
           </div>
@@ -111,7 +113,7 @@ export default function Home() {
               </svg>
             </div>
             <div>
-              <div style={styles.statNumber}>99.5%</div>
+              <div style={styles.statNumber}>98.5%</div>
               <div style={styles.statLabel}><b>Satisfaction</b><br />Rate</div>
             </div>
           </div>
@@ -177,7 +179,7 @@ export default function Home() {
               <span style={styles.star}>★★★★★</span>
               {/* <span>All Subjects</span> */}
             </div>
-            <button style={styles.courseButton} >Learn More</button>
+            {/* <button style={styles.courseButton} >Learn More</button> */}
           </div>
 
           <div style={styles.courseCard}>
@@ -194,7 +196,7 @@ export default function Home() {
               <span style={styles.star}>★★★★★</span>
               {/* <span>All Subjects</span> */}
             </div>
-            <button style={styles.courseButton}>Learn More</button>
+            {/* <button style={styles.courseButton}>Learn More</button> */}
           </div>
 
           <div style={styles.courseCard}>
@@ -211,10 +213,10 @@ export default function Home() {
               <span style={styles.star}>★★★★</span>
               {/* <span>All Subjects</span> */}
             </div>
-            <button style={styles.courseButton}>Learn More</button>
+            {/* <button style={styles.courseButton}>Learn More</button> */}
           </div>
 
-          <div style={styles.courseCard}>
+          {/* <div style={styles.courseCard}>
             <div style={styles.courseImageContainer}>
               <img
                 src="/images/dd.png"
@@ -226,12 +228,12 @@ export default function Home() {
             <p style={styles.courseStudents}>Practical skills</p>
             <div style={styles.courseRating}>
               <span style={styles.star}>★★★★</span>
-              {/* <span>Hands-on</span> */}
+              <span>Hands-on</span>
             </div>
             <button style={styles.courseButton}>Learn More</button>
-          </div>
+          </div> */}
 
-          <div style={styles.courseCard}>
+          {/* <div style={styles.courseCard}>
             <div style={styles.courseImageContainer}>
               <img
                 src="/images/networking.png"
@@ -243,10 +245,10 @@ export default function Home() {
             <p style={styles.courseStudents}>Advanced coding</p>
             <div style={styles.courseRating}>
               <span style={styles.star}>★★★★★</span>
-              {/* <span>Hands-on</span> */}
+              <span>Hands-on</span>
             </div>
             <button style={styles.courseButton}>Learn More</button>
-          </div>
+          </div> */}
 
           <div style={styles.courseCard}>
             <div style={styles.courseImageContainer}>
@@ -262,10 +264,10 @@ export default function Home() {
               <span style={styles.star}>★★★★</span>
               {/* <span>Personalized</span> */}
             </div>
-            <button style={styles.courseButton}>Learn More</button>
+            {/* <button style={styles.courseButton}>Learn More</button> */}
           </div>
 
-          <div style={styles.courseCard}>
+          {/* <div style={styles.courseCard}>
             <div style={styles.courseImageContainer}>
               <img
                 src="/images/web.png"
@@ -277,11 +279,11 @@ export default function Home() {
             <p style={styles.courseStudents}>Physics, Chemistry, Biology</p>
             <div style={styles.courseRating}>
               <span style={styles.star}>★★★★★</span>
-              {/* <span>Practical</span> */}
+              <span>Practical</span>
             </div>
             <button style={styles.courseButton}>Learn More</button>
-          </div>
-
+          </div> */}
+{/* 
           <div style={styles.courseCard}>
             <div style={styles.courseImageContainer}>
               <img
@@ -294,10 +296,10 @@ export default function Home() {
             <p style={styles.courseStudents}>Communication skills</p>
             <div style={styles.courseRating}>
               <span style={styles.star}>★★★★</span>
-              {/* <span>Interactive</span> */}
+              <span>Interactive</span>
             </div>
             <button style={styles.courseButton}>Learn More</button>
-          </div>
+          </div> */}
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}>
@@ -537,9 +539,9 @@ const styles: { [key: string]: React.CSSProperties } = {
     flexWrap: 'wrap',
   },
   primaryButton: {
-    backgroundColor: '#0000FF',
-    color: 'white',
-    border: 'none',
+    backgroundColor: 'yellow',
+    color: 'black',
+    border: '2px solid black',
     padding: '1rem 2rem',
     borderRadius: '8px',
     fontSize: '1.1rem',
@@ -627,7 +629,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   sectionSubtitle: {
     fontSize: '1.1rem',
     color: '#64748b',
-    maxWidth: '600px',
+    maxWidth: '600px',  
     margin: '0 auto',
     fontFamily: 'Roboto, sans-serif',
   },

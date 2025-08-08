@@ -65,7 +65,7 @@ career: [
 ],
 instructor: 'Dr. Ahmad Hassan',
 price: 'PKR 45,000',
-students: 1250,
+students: 30,
 rating: 4.8,
 image: '/images/aicourse.png'
   },
@@ -108,7 +108,7 @@ image: '/images/aicourse.png'
     ],
     instructor: 'Fatima Khan',
     price: 'PKR 28,000',
-    students: 890,
+    students: 22,
     rating: 4.7,
     image: '/images/graphicdesigning.png'
 },
@@ -149,7 +149,7 @@ image: '/images/aicourse.png'
     ],
     instructor: 'Eng. Muhammad Ali',
     price: 'PKR 22,000',
-    students: 567,
+    students: 13,
     rating: 4.6,
     image: '/images/autocad.png'
 },
@@ -194,7 +194,7 @@ image: '/images/aicourse.png'
     ],
     instructor: 'Sarah Ahmed',
     price: 'PKR 55,000',
-    students: 723,
+    students: 54,
     rating: 4.9,
     image: '/images/dd.png'
 },
@@ -235,7 +235,7 @@ image: '/images/aicourse.png'
     ],
     instructor: 'Usman Malik',
     price: 'PKR 18,000',
-    students: 445,
+    students: 25,
     rating: 4.5,
     image: '/images/networking.png'
 },
@@ -262,7 +262,7 @@ image: '/images/aicourse.png'
     career: ['Qari/Qaria', 'Islamic Teacher', 'Imam', 'Religious Scholar', 'Community Leader'],
     instructor: 'Qari Abdul Rahman',
     price: 'PKR 12,000',
-    students: 2150,
+    students: 10,
     rating: 4.9,
     image: '/images/quran.png'
   },
@@ -304,7 +304,7 @@ image: '/images/aicourse.png'
     ],
     instructor: 'Ahsan Raza',
     price: 'PKR 42,000',
-    students: 634,
+    students: 63,
     rating: 4.7,
     image: '/images/web.png'
 },
@@ -346,7 +346,7 @@ image: '/images/aicourse.png'
     ],
     instructor: 'Ms. Jennifer Smith',
     price: 'PKR 15,000',
-    students: 1456,
+    students: 26,
     rating: 4.6,
     image: '/images/eng.png'
 },
@@ -390,7 +390,7 @@ image: '/images/aicourse.png'
     ],
     instructor: 'Dr. Hassan Ali',
     price: 'PKR 25,000',
-    students: 892,
+    students: 54,
     rating: 4.8,
     image: '/images/C.png'
 },
@@ -432,7 +432,7 @@ image: '/images/aicourse.png'
     ],
     instructor: 'CA Sadia Malik',
     price: 'PKR 20,000',
-    students: 678,
+    students: 16,
     rating: 4.5,
     image: '/images/acc.png'
 },
@@ -459,7 +459,7 @@ image: '/images/aicourse.png'
     career: ['Biologist', 'Medical Professional', 'Research Scientist', 'Environmental Consultant', 'Biotechnologist'],
     instructor: 'Dr. Ayesha Khan',
     price: 'PKR 16,000',
-    students: 534,
+    students: 90,
     rating: 4.7,
     image: '/images/biology.png'
   },
@@ -485,7 +485,7 @@ image: '/images/aicourse.png'
   career: ['Mathematician', 'Engineer', 'Data Scientist', 'Economist', 'Researcher'],
   instructor: 'Prof. Imran Siddiqui',
   price: 'PKR 18,500',
-  students: 487,
+  students: 33,
   rating: 4.8,
   image: '/images/calculus.png'
 },
@@ -512,7 +512,7 @@ image: '/images/aicourse.png'
     career: ['Office Administrator', 'Data Analyst', 'Executive Assistant', 'Business Analyst', 'Project Coordinator'],
     instructor: 'Kamran Sheikh',
     price: 'PKR 12,000',
-    students: 1789,
+    students: 76,
     rating: 4.4,
     image: '/images/office.png'
   },
@@ -538,7 +538,7 @@ image: '/images/aicourse.png'
     career: ['Economist', 'Financial Analyst', 'Policy Researcher', 'Banking Professional', 'Business Consultant'],
     instructor: 'Dr. Asma Rehman',
     price: 'PKR 22,000',
-    students: 367,
+    students: 36,
     rating: 4.5,
     image: '/images/economics.png'
   },
@@ -566,7 +566,7 @@ image: '/images/aicourse.png'
     career: ['Physicist', 'Engineer', 'Research Scientist', 'Teacher', 'Technical Consultant'],
     instructor: 'Dr. Tariq Mahmood',
     price: 'PKR 24,000',
-    students: 456,
+    students: 46,
     rating: 4.7,
     image: '/images/physics.png'
   },
@@ -604,7 +604,7 @@ image: '/images/aicourse.png'
     ],
     instructor: 'Dr. Nadia Ahmed',
     price: 'PKR 26,000',
-    students: 612,
+    students: 62,
     rating: 4.6,
     image: '/images/stats.png'
   }

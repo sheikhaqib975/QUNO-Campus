@@ -253,14 +253,8 @@ const Header = () => {
           <Link 
             href="/trial" 
             style={styles.freeTrialButton}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#fbbf24';
-              e.currentTarget.style.transform = 'translateY(-1px)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'yellow';
-              e.currentTarget.style.transform = 'translateY(0)';
-            }}
+           
+           
           >
             Free Trial
           </Link>

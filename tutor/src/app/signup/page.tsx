@@ -68,9 +68,9 @@ const Signup: React.FC = () => {
       <div style={styles.formContainer}>
         {/* Logo/Brand area */}
         <div style={styles.brandSection}>
-          <div style={styles.logoCircle}>
-            <span style={styles.logoText}>QC</span>
-          </div>
+          {/* <div style={styles.logoCircle}> */}
+            <img src="images/qunologo.png" alt="logo" style={{width:"60px",height:"60px"}} />
+          {/* </div> */}
           <h2 style={styles.heading}>Join QUNO Campus</h2>
           <p style={styles.subheading}>Create your account and start learning</p>
         </div>
