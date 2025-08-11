@@ -168,7 +168,7 @@ export default function Home() {
           <div style={styles.courseCard}>
             <div style={styles.courseImageContainer}>
               <img
-                src="/images/aicourse.png"
+                src="/images/ai.jpg"
                 alt="Artificial Intelligence Course"
                 style={styles.courseImage}
               />
@@ -185,7 +185,7 @@ export default function Home() {
           <div style={styles.courseCard}>
             <div style={styles.courseImageContainer}>
               <img
-                src="/images/graphicdesigning.png"
+                src="/images/graphic.jpg"
                 alt="Graphic designing Course"
                 style={styles.courseImage}
               />
@@ -202,7 +202,7 @@ export default function Home() {
           <div style={styles.courseCard}>
             <div style={styles.courseImageContainer}>
               <img
-                src="/images/autocad.png"
+                src="/images/autocad.jpg"
                 alt="AutoCad Course"
                 style={styles.courseImage}
               />
@@ -253,7 +253,7 @@ export default function Home() {
           <div style={styles.courseCard}>
             <div style={styles.courseImageContainer}>
               <img
-                src="/images/quran.png"
+                src="/images/quran.jpg"
                 alt="Quran"
                 style={styles.courseImage}
               />

@@ -67,7 +67,7 @@ instructor: 'Dr. Ahmad Hassan',
 price: 'PKR 45,000',
 students: 30,
 rating: 4.8,
-image: '/images/aicourse.png'
+image: '/images/ai.jpg'
   },
 
   'graphic-designing': {
@@ -110,7 +110,48 @@ image: '/images/aicourse.png'
     price: 'PKR 28,000',
     students: 22,
     rating: 4.7,
-    image: '/images/graphicdesigning.png'
+    image: '/images/graphic.jpg'
+},
+'chemistry': {
+    title: 'Chemistry',
+    description: 'Explore the fascinating world of chemistry, from atoms and molecules to chemical reactions and advanced concepts. Learn through theory, experiments, and real-life applications, building a strong foundation for academic and professional success.',
+    duration: '16 weeks',
+    level: 'Beginner to Intermediate',
+    prerequisites: ['Basic Science Knowledge', 'Curiosity for Learning', 'No Prior Chemistry Expertise Required'],
+    curriculum: [
+      'Introduction to Chemistry & Scientific Method',
+      'Atomic Structure and Periodic Table',
+      'Chemical Bonding and Molecular Structure',
+      'States of Matter: Gases, Liquids, and Solids',
+      'Chemical Reactions and Equations',
+      'Stoichiometry and Molar Calculations',
+      'Acids, Bases, and pH',
+      'Thermochemistry and Energy Changes',
+      'Organic Chemistry Basics',
+      'Laboratory Skills and Safety Procedures'
+    ],
+    skills: [
+      'Laboratory Techniques',
+      'Chemical Analysis',
+      'Problem-Solving in Chemistry',
+      'Data Interpretation',
+      'Understanding Chemical Reactions',
+      'Experimental Design',
+      'Scientific Communication'
+    ],
+    career: [
+      'Chemist',
+      'Laboratory Technician',
+      'Research Scientist',
+      'Chemical Engineer',
+      'Pharmaceutical Scientist',
+      'Environmental Analyst'
+    ],
+    instructor: 'Dr. Ayesha Malik',
+    price: 'PKR 32,000',
+    students: 18,
+    rating: 4.8,
+    image: '/images/chemistry.jpg'
 },
 
   'autocad': {
@@ -151,7 +192,7 @@ image: '/images/aicourse.png'
     price: 'PKR 22,000',
     students: 13,
     rating: 4.6,
-    image: '/images/autocad.png'
+    image: '/images/autocad.jpg'
 },
 
   'design-and-development': {
@@ -196,7 +237,7 @@ image: '/images/aicourse.png'
     price: 'PKR 55,000',
     students: 54,
     rating: 4.9,
-    image: '/images/dd.png'
+    image: '/images/dd.jpg'
 },
 
   'basic-networking': {
@@ -237,7 +278,7 @@ image: '/images/aicourse.png'
     price: 'PKR 18,000',
     students: 25,
     rating: 4.5,
-    image: '/images/networking.png'
+    image: '/images/networking.jpg'
 },
 
   'quran-pak': {
@@ -264,7 +305,7 @@ image: '/images/aicourse.png'
     price: 'PKR 12,000',
     students: 10,
     rating: 4.9,
-    image: '/images/quran.png'
+    image: '/images/quran.jpg'
   },
   'web-development-dotnet': {
     title: 'Web Development with .NET',
@@ -348,7 +389,7 @@ image: '/images/aicourse.png'
     price: 'PKR 15,000',
     students: 26,
     rating: 4.6,
-    image: '/images/eng.png'
+    image: '/images/eng.jpg'
 },
 
  'cpp': {
@@ -392,7 +433,7 @@ image: '/images/aicourse.png'
     price: 'PKR 25,000',
     students: 54,
     rating: 4.8,
-    image: '/images/C.png'
+    image: '/images/c.jpg'
 },
 
   'accounting': {
@@ -434,10 +475,10 @@ image: '/images/aicourse.png'
     price: 'PKR 20,000',
     students: 16,
     rating: 4.5,
-    image: '/images/acc.png'
+    image: '/images/accounting.jpg'
 },
 
-  'biology': {
+  'bio': {
     title: 'Biology',
     description: 'Explore the fascinating world of life sciences from cellular biology to ecosystems. Perfect for students and biology enthusiasts.',
     duration: '12 weeks',
@@ -461,7 +502,7 @@ image: '/images/aicourse.png'
     price: 'PKR 16,000',
     students: 90,
     rating: 4.7,
-    image: '/images/biology.png'
+    image: '/images/bio.jpg'
   },
   'calculus': {
   title: 'Calculus',
@@ -487,7 +528,7 @@ image: '/images/aicourse.png'
   price: 'PKR 18,500',
   students: 33,
   rating: 4.8,
-  image: '/images/calculus.png'
+  image: '/images/calculus.jpg'
 },
 
   'ms-office': {
@@ -514,7 +555,7 @@ image: '/images/aicourse.png'
     price: 'PKR 12,000',
     students: 76,
     rating: 4.4,
-    image: '/images/office.png'
+    image: '/images/office.jpg'
   },
   'economics': {
     title: 'Economics',
@@ -540,7 +581,7 @@ image: '/images/aicourse.png'
     price: 'PKR 22,000',
     students: 36,
     rating: 4.5,
-    image: '/images/economics.png'
+    image: '/images/economics.jpg'
   },
 
 
@@ -568,7 +609,7 @@ image: '/images/aicourse.png'
     price: 'PKR 24,000',
     students: 46,
     rating: 4.7,
-    image: '/images/physics.png'
+    image: '/images/phy.jpg'
   },
   statistics: {
     title: 'Statistics',
@@ -606,8 +647,129 @@ image: '/images/aicourse.png'
     price: 'PKR 26,000',
     students: 62,
     rating: 4.6,
-    image: '/images/stats.png'
-  }
+    image: '/images/stats.jpg'
+  },
+  
+'algebra': {
+    title: 'Algebra',
+    description: 'Master the language of mathematics through algebra. Learn to solve equations, understand functions, and apply algebraic thinking to real-world problems.',
+    duration: '12 weeks',
+    level: 'Beginner to Intermediate',
+    prerequisites: ['Basic Arithmetic Skills', 'Logical Thinking'],
+    curriculum: [
+      'Introduction to Algebra & Variables',
+      'Linear Equations and Inequalities',
+      'Polynomials and Factoring',
+      'Quadratic Equations',
+      'Functions and Graphs',
+      'Systems of Equations',
+      'Exponents and Radicals',
+      'Rational Expressions',
+      'Word Problems and Applications',
+      'Preparation for Advanced Mathematics'
+    ],
+    skills: [
+      'Problem-Solving in Mathematics',
+      'Logical Reasoning',
+      'Graphing and Data Interpretation',
+      'Critical Thinking',
+      'Equation Solving Techniques'
+    ],
+    career: [
+      'Data Analyst',
+      'Economist',
+      'Engineer',
+      'Mathematics Educator',
+      'Actuary',
+      'Researcher'
+    ],
+    instructor: 'Prof. Ali Khan',
+    price: 'PKR 25,000',
+    students: 25,
+    rating: 4.7,
+    image: '/images/algebra.jpg'
+},
+
+'environmental-science': {
+    title: 'Environmental Science',
+    description: 'Understand the relationship between humans and the environment. Study ecosystems, climate change, conservation, and sustainable practices to protect our planet.',
+    duration: '14 weeks',
+    level: 'Beginner to Intermediate',
+    prerequisites: ['Basic Science Knowledge', 'Interest in Environmental Issues'],
+    curriculum: [
+      'Introduction to Environmental Science',
+      'Ecosystem Structure and Function',
+      'Biodiversity and Conservation',
+      'Climate Change and Global Warming',
+      'Natural Resources Management',
+      'Pollution and Waste Management',
+      'Renewable Energy Solutions',
+      'Environmental Policy and Law',
+      'Sustainable Development Goals',
+      'Field Studies and Environmental Projects'
+    ],
+    skills: [
+      'Environmental Impact Assessment',
+      'Data Collection and Analysis',
+      'Research and Report Writing',
+      'Critical Thinking on Environmental Issues',
+      'Sustainable Planning'
+    ],
+    career: [
+      'Environmental Scientist',
+      'Conservation Officer',
+      'Sustainability Consultant',
+      'Wildlife Manager',
+      'Climate Change Analyst',
+      'Environmental Policy Advisor'
+    ],
+    instructor: 'Dr. Hina Raza',
+    price: 'PKR 29,000',
+    students: 15,
+    rating: 4.8,
+    image: '/images/environmental-science.jpg'
+},
+
+'geometry': {
+    title: 'Geometry',
+    description: 'Explore shapes, sizes, and the properties of space. Learn geometric principles and apply them in solving mathematical and real-world spatial problems.',
+    duration: '12 weeks',
+    level: 'Beginner to Intermediate',
+    prerequisites: ['Basic Arithmetic Skills', 'Understanding of Basic Algebra'],
+    curriculum: [
+      'Introduction to Geometry & Geometric Tools',
+      'Points, Lines, and Angles',
+      'Triangles and Their Properties',
+      'Quadrilaterals and Polygons',
+      'Circles and Their Properties',
+      'Coordinate Geometry',
+      'Transformations and Symmetry',
+      'Perimeter, Area, and Volume',
+      'Trigonometry Basics',
+      'Geometric Proofs and Problem-Solving'
+    ],
+    skills: [
+      'Spatial Reasoning',
+      'Problem-Solving in Geometry',
+      'Measurement and Calculation',
+      'Logical Thinking',
+      'Analytical Skills'
+    ],
+    career: [
+      'Architect',
+      'Civil Engineer',
+      'Mathematics Teacher',
+      'Urban Planner',
+      'Surveyor',
+      'Designer'
+    ],
+    instructor: 'Prof. Zubair Malik',
+    price: 'PKR 26,000',
+    students: 18,
+    rating: 4.7,
+    image: '/images/geometry.jpg'
+}
+
 };
 
 const styles: { [key: string]: React.CSSProperties } = {
@@ -973,23 +1135,8 @@ export default function CourseDetail() {
               </ul>
             </div>
 
-            {/* Contact Information */}
-            <div style={styles.section}>
-              <h3 style={styles.sectionTitle}> 
-                 <img src="/images/phoneblack.png" alt="logo" style={{ width: '20px', height: '20px' }} />
-                 Contact Info</h3>
-              <div style={{ fontSize: '0.9rem', color: '#64748b' }}>
-                <p style={{ marginBottom: '0.5rem' }}>
-                  <strong>Email:</strong> info@courses.com
-                </p>
-                <p style={{ marginBottom: '0.5rem' }}>
-                  <strong>Phone:</strong> +92 300 1234567
-                </p>
-                <p>
-                  <strong>WhatsApp:</strong> +92 300 1234567
-                </p>
-              </div>
-            </div>
+         
+           
           </div>
         </div>
 

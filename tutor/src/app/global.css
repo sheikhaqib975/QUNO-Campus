@@ -1,0 +1,58 @@
+/* globals.css */
+
+/* Reset all default browser margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+/* Reset Next.js default margins */
+#__next {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Ensure all main containers take full width */
+main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Remove default margins from common elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+section,
+article {
+  margin: 0;
+}
+
+/* Fix for potential list padding */
+ul,
+ol {
+  padding-left: 0;
+  margin: 0;
+}
