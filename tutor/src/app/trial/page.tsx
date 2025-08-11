@@ -10,7 +10,6 @@ function trial() {
     timezone: "",
     curriculum: "",
     grade: "",
-    trialTopic: "",
     message: "",
     name: "",
     parentName: "",
@@ -21,7 +20,7 @@ function trial() {
     preferredLanguage: "english",
     email: "",
   });
- const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false); 
   const [showTerms, setShowTerms] = useState(false);
   const [showPrivacy, setShowPrivacy] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -76,7 +75,6 @@ function trial() {
       (tz, index, self) => index === self.findIndex((t) => t.value === tz.value)
     )
     .sort((a, b) => a.label.localeCompare(b.label));
-    
   
   const countryPhoneCodes = {
     Afghanistan: "+93",
@@ -321,6 +319,29 @@ function trial() {
     Zimbabwe: "+263",
   };
 
+  // Country-specific phone number length requirements
+  const countryPhoneLengths: Record<string, number> = {
+    Pakistan: 10,        // Without country code: 10 digits (e.g., 3001234567)
+    India: 10,           // Indian numbers are 10 digits
+    "United States": 10, // US numbers are 10 digits (e.g., 1234567890)
+    "United Kingdom": 10, // UK numbers are 10 digits
+    China: 11,           // Chinese numbers are 11 digits
+    Brazil: 10,          // Brazilian numbers are 10 or 11 digits (using 10 as min)
+    "Saudi Arabia": 9,   // Saudi numbers are 9 digits
+    "United Arab Emirates": 9, // UAE numbers are 9 digits
+    Egypt: 10,           // Egyptian numbers are 10 digits
+    Canada: 10,          // Canadian numbers are 10 digits
+    Australia: 9,        // Australian numbers are 9 digits
+    Germany: 10,         // German numbers are 10-11 digits
+    France: 9,           // French numbers are 9 digits
+    Russia: 10,          // Russian numbers are 10 digits
+    Japan: 10,           // Japanese numbers are 10 digits
+    "South Korea": 9,    // South Korean numbers are 9-10 digits
+    Mexico: 10,          // Mexican numbers are 10 digits
+    "South Africa": 9,   // South African numbers are 9 digits
+    // Default will be 7 digits for other countries
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => {
@@ -358,18 +379,28 @@ function trial() {
     }
   );
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault(); // Prevent default form submission immediately
-  setIsSubmitting(true); // Start loading
-  setSubmitStatus({ type: "", message: "" }); // Clear any previous status
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus({ type: "", message: "" });
 
   try {
-    // Combine phoneCode and phoneNumber
-    const fullPhoneNumber = `${formData.phoneCode}${formData.phoneNumber}`.replace(/[^\d+]/g, "");
+    // Validate country selection
+    if (!formData.country) {
+      throw new Error("Please select your country");
+    }
 
-    // Validate phone number
-    if (!formData.phoneNumber || fullPhoneNumber.length < 8) {
-      throw new Error("Please provide a valid phone number (at least 7 digits).");
+    // Combine phoneCode and phoneNumber
+    const digitsOnlyPhone = formData.phoneNumber.replace(/\D/g, '');
+    const fullPhoneNumber = `${formData.phoneCode}${digitsOnlyPhone}`;
+
+    // Validate phone number based on country
+    const requiredLength = countryPhoneLengths[formData.country] || 7;
+    
+    if (!formData.phoneNumber || digitsOnlyPhone.length < requiredLength) {
+      throw new Error(
+        `Phone number for ${formData.country} must be at least ${requiredLength} digits`
+      );
     }
 
     const dataToSubmit = {
@@ -378,25 +409,65 @@ function trial() {
       createdAt: serverTimestamp(),
     };
 
-    // Send EmailJS email
+    // Send email to admin first
     await emailjs.send(
-      'service_abc1234', // replace with your EmailJS service ID
-      'template_abc1234', // replace with your EmailJS template ID
-      dataToSubmit,
-      'lHysE0PFH-Hpb4sgB' // replace with your EmailJS public key
+      'service_abc1234', // Replace with your actual EmailJS service ID
+      'template_abc1234', // Replace with your actual admin template ID
+      {
+        // Admin email data
+        name: formData.name,
+        parent_name: formData.parentName,
+        email: formData.email,
+        phone: fullPhoneNumber,
+        country: formData.country,
+        timezone: formData.timezone,
+        grade: formData.grade,
+        curriculum: formData.curriculum,
+        subject: formData.subject,
+        preferred_contact: formData.preferredContact,
+        preferred_language: formData.preferredLanguage,
+        message: formData.message,
+      },
+      'DwmVUXzbFUgSDD4TZ' // Replace with your actual EmailJS public key
     );
 
-    // Save data to Firestore
+    // Send confirmation email to user
+    await emailjs.send(
+      'service_abc12345', // Same service ID (must be consistent)
+      'template_abc12345', // Replace with your actual user confirmation template ID
+      {
+        // User confirmation email data
+        to_email: formData.email,
+        to_name: formData.name,
+        parent_name: formData.parentName,
+        student_name: formData.name,
+        subject: formData.subject,
+        grade: formData.grade,
+        curriculum: formData.curriculum,
+        country: formData.country,
+        timezone: formData.timezone,
+        phone: fullPhoneNumber,
+        preferred_contact: formData.preferredContact,
+        preferred_language: formData.preferredLanguage,
+        message: formData.message || "No additional requirements specified",
+      },
+      'DwmVUXzbFUgSDD4TZ' // Same public key
+    );
+
+    // Save data to Firestore (only after successful email sending)
     await addDoc(collection(db, 'enrollments'), dataToSubmit);
 
-    setSubmitStatus({ type: 'success', message: 'Trial enrollment submitted successfully!' });
+    setSubmitStatus({ 
+      type: 'success', 
+      message: 'Registration submitted successfully! Please check your email for confirmation details.' 
+    });
 
+    // Reset form
     setFormData({
       country: '',
       timezone: '',
       curriculum: '',
       grade: '',
-      trialTopic: '',
       message: '',
       name: '',
       parentName: '',
@@ -407,16 +478,38 @@ function trial() {
       preferredLanguage: 'english',
       email: '',
     });
+    setPhoneCodeQuery('+1');
+    
   } catch (error) {
-    console.error('Error submitting trial:', error);
-    setSubmitStatus({ type: 'error', message: 'Failed to submit trial. Please try again later.' });
+    console.error('Error submitting registration:', error);
+    
+    // More specific error messages
+    let errorMessage = 'Failed to submit registration. Please try again.';
+    
+    // Type guard to safely access error properties
+    if (error instanceof Error) {
+      if (error.message.includes('phone')) {
+        errorMessage = error.message;
+      }
+    } else if (typeof error === 'object' && error !== null) {
+      const errorObj = error as any;
+      if (errorObj.status === 400) {
+        errorMessage = 'Invalid email configuration. Please contact support.';
+      } else if (errorObj.status === 403) {
+        errorMessage = 'Email service unavailable. Please try again later.';
+      } else if (errorObj.message) {
+        errorMessage = errorObj.message;
+      }
+    }
+    
+    setSubmitStatus({ 
+      type: 'error', 
+      message: errorMessage 
+    });
   } finally {
     setIsSubmitting(false);
   }
 };
-
-
-  
 
   const LegalModal = ({ title, content, onClose }: { title: string; content: React.ReactNode; onClose: () => void }) => (
     <div style={styles.modalOverlay}>
@@ -1070,19 +1163,29 @@ const styles: { [key: string]: React.CSSProperties } = {
     minHeight: '100px',
   },
   phoneField: {
-    display: 'grid',
-    gridTemplateColumns: '1fr 2fr',
-    gap: '1rem',
-    minWidth: '100%',
-  },
-  phoneCodeField: {
-    position: 'relative',
-  },
-  phoneNumberField: {
-    display: 'flex',
-    flexDirection: 'column' as const,
-    gap: '0.5rem',
-  },
+  display: 'grid',
+  gridTemplateColumns: '1fr 2fr',
+  gap: '1rem',
+  minWidth: '100%',
+  alignItems: 'start', // start so labels align at top
+},
+
+phoneCodeField: {
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column', // match phoneNumberField
+  gap: '0.5rem', 
+},
+
+phoneNumberField: {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.5rem',
+},
+
+
+
+
   suggestionsList: {
     position: 'absolute',
     top: '100%',

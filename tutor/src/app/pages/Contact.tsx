@@ -8,8 +8,6 @@ interface FormData {
   name: string;
   email: string;
   phone: string;
-  address: string;
-  subject: string;
   message: string;
 }
 
@@ -18,8 +16,6 @@ const Contact: React.FC = () => {
     name: '',
     email: '',
     phone: '',
-    address: '',
-    subject: '',
     message: ''
   });
 
@@ -49,8 +45,6 @@ const Contact: React.FC = () => {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          address: formData.address,
-          subject: formData.subject,
           message: formData.message,
         },
         'lHysE0PFH-Hpb4sgB' // Your Public Key
@@ -66,8 +60,6 @@ const Contact: React.FC = () => {
         name: '',
         email: '',
         phone: '',
-        address: '',
-        subject: '',
         message: '',
       });
     } catch (error) {
